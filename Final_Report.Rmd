@@ -79,10 +79,48 @@ library("phyloseq")
 # unclear.
 ```
 
-```{r}
+```{r load, echo = FALSE}
 load("output/phyloseqobject.RData")
 ```
 
+```{r boxplot-of-alpha-diversity}
+pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+plot_richness(pruned_phyloseq,
+              x = "host_phenotype_s",
+              measures = c("Shannon"),
+              color = "host_phenotype_s") +
+  xlab("Sample Name") +
+  geom_boxplot(width = 0.2) +
+  theme_bw()
+```
+
+**Figure 1**: 
+
+```{r plot-alpha-diversty-by-sex, echo = FALSE}
+pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+plot_richness(pruned_phyloseq,
+              x = "host_phenotype_s",
+              measures = c("Shannon"),
+              color = "host_sex_s") +
+  xlab("Sample origin") +
+  geom_jitter(width = 0.2) +
+  theme_bw()
+#theme(axis.text.x = # rotates x axis labels vertically
+           # element_text(angle = 45,
+                       #  hjust = 1))
+```
+
+**Figure 2**: Alpha diversity measures of the three sample types, neutered obese and lean cats, colored by gender. Overall, there is a substantial amount of microbial diversty present among males and females in each sample type. Interestingly, the communities present among males in neutered and obese cats showed a higher measure of Shannon diverty.
+
+```{r plot-richness-of-host-}
+pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+plot_richness(pruned_phyloseq,
+              measures = "Observed",
+              color = "host_phenotype_s") +
+theme(axis.text.x = # rotates x axis labels vertically
+            element_text(angle = 45,
+                         hjust = 1))
+```
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
 # Discussion
