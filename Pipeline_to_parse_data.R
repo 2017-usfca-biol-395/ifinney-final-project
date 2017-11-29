@@ -1,4 +1,3 @@
-## ----load-libraries, message = FALSE-------------------------------------
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
 # or with the 'Packages' pane in RStudio
