@@ -207,14 +207,14 @@ metadata_in <- read.table(paste0("data/metadata/",
 # read in the phylogeny, which was created from the fasta exported above
 # in Geneious by aligning the sequences with MAFFT and then building a
 # Maximum-Likelihood tree with RAxML
-#tree_in <- read_tree("output/sequence_variants_MAFFT_RAxML.newick")
+tree_in <- read_tree("output/sequence_variants_seqs_FastTree_Tree.newick")
 
 # Construct phyloseq object (straightforward from dada2 outputs)
 phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                                    taxa_are_rows = FALSE), # sample-spp matrix
                          sample_data(metadata_in), # metadata for each sample
-                         tax_table(taxa)) # taxonomy for each sequence variant
-                         #phy_tree(tree_in)) # phylogeny from sequence variants
+                         tax_table(taxa), # taxonomy for each sequence variant
+                         phy_tree(tree_in)) # phylogeny from sequence variants
 
 melted_obj <- psmelt(phyloseq_obj)
 
