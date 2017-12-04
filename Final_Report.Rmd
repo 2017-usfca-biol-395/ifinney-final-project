@@ -31,7 +31,7 @@ These are the methods you used to do your bioinformatic analyses analyses. Shoul
 
 ## Subsections are ok in the results section too
 
-```{r load-libraries, message = FALSE}
+```{r load-libraries, message = FALSE, echo = FALSE}
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
 # or with the 'Packages' pane in RStudio
@@ -80,18 +80,20 @@ melted_obj <- psmelt(phyloseq_obj)
 
 ```{r boxplot-of-alpha-diversity, echo = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+#Create pruned phyloseq to create dataset I particularly need
 plot_richness(pruned_phyloseq,
               x = "host_phenotype_s",
               measures = c("Shannon"),
               color = "host_phenotype_s") +
   xlab("Sample Name") +
   geom_boxplot(width = 0.2) +
+  ggtitle("Alpha Diversity of Lean and Obese Neutered Cats") +
   theme_bw()
 ```
 
-**Figure 1**: 
+**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats. 
 
-```{r plot-alpha-diversty-by-sex, echo = FALSE}
+```{r plot-alpha-diversty-by-sex, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_richness(pruned_phyloseq,
               x = "host_phenotype_s",
@@ -99,60 +101,49 @@ plot_richness(pruned_phyloseq,
               color = "host_sex_s") +
   xlab("Sample origin") +
   geom_jitter(width = 0.2) +
+  ggtitle("Alpha Diversity of Lean and Obese Neutered Cats by Sex") +
   theme_bw()
-#theme(axis.text.x = # rotates x axis labels vertically
-           # element_text(angle = 45,
-                       #  hjust = 1))
 ```
 
 **Figure 2**: Alpha diversity measures of the three sample types, neutered obese and lean cats, colored by gender. Overall, there is a substantial amount of microbial diversty present among males and females in each sample type. Interestingly, the communities present among males in neutered and obese cats showed a higher measure of Shannon diverty.
 
-```{r plot-richness-by-host-phenotype, echo = FALSE}
+```{r plot-richness-by-host-phenotype, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_richness(pruned_phyloseq,
               measures = "Observed",
               color = "host_phenotype_s") +
-theme(axis.text.x = # rotates x axis labels vertically
+  ggtitle("Richness Measure of Lean and Obese Neutered Cats") +
+theme(axis.text.x = # rotates x axis labels to 45 degree angle
             element_text(angle = 45,
                          hjust = 1))
 ```
 
 **Figure 3**:
 
-```{r plot-phylogenetic-tree, echo = FALSE}
+```{r plot-phylogenetic-tree, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_tree(pruned_phyloseq,
           color = "host_phenotype_s",
-          ladderize = TRUE) # this arranges the tree branches from short to long
+          ladderize = TRUE) + # this arranges the tree branches from short to long
+ggtitle("Phylogenetic Tree between Lean and Obese Neutured Cats")
 ```
 
 **Figure 4**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
 
-```{r plot-ordination-of-taxa-by-sample, echo = FALSE}
+```{r plot-ordination-of-taxa-by-sample, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 
 p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
                      type = "BioSample_s",
                      color = "host_phenotype_s",
-                     title = "Ordination of Lean, Obese, and Obese Weight-loss")
+                     title = "Taxa Ordination of Lean, Obese, and Obese Weight-loss")
 print(p1)
 ```
 
 **FIGUREEEEEEE**: 
 
-```{r plot-ordination-of-phylum-by-sample, echo = FALSE}
-pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
-pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
-
-p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
-                     type = "Class",
-                     color = "host_phenotype_s",
-                     title = "Ordination of Lean, Obese, and Obese Weight-loss by Phylum")
-print(p1)
-```
-
-```{r}
+```{r barplot-of-phylum, echo = FALSE, message = FALSE, warning = FALSE}
 melted_obj %>%
   filter(!is.na(Phylum)) %>%
   filter(host_phenotype_s != "Intact") %>%
@@ -162,7 +153,11 @@ melted_obj %>%
              y = mean_abund,
              fill = Phylum)) +
     geom_col()
+```
 
+**FIGUREEEEEEE*:
+
+```{r barplot-of-genus, echo = FALSE, message = FALSE, warning = FALSE}
 melted_obj %>%
   filter(!is.na(Genus)) %>%
   filter(host_phenotype_s != "Intact") %>%
@@ -173,22 +168,21 @@ melted_obj %>%
              y = mean_abund,
              fill = Genus)) +
     geom_col()
+```
 
-summ_table <- melted_obj %>%
-  filter(!is.na(Family)) %>%
+**FIGUREEEEE**:
+
+```{r summary-table-of-genus-types, echo = FALSE}
+melted_obj %>%
+  filter(!is.na(Phylum)) %>%
+  filter(!is.na(Genus)) %>%
   filter(host_phenotype_s != "Intact") %>%
-  group_by(host_phenotype_s, Family) %>%
+  group_by(host_phenotype_s, Genus) %>%
   summarize(mean_abund = mean(Abundance)) %>%
   top_n(10, mean_abund) %>%
-  spread(key = Family,
+  spread(key = host_phenotype_s,
          value = mean_abund) %>%
-  t()
-
-write.csv(summ_table, "output/summary_table.csv")
-summ_table <- read.csv("output/summary_table.csv",
-         skip = 1,
-         header = TRUE)
-kable(summ_table)
+  kable()
 ```
 
 **FIGUREEEEE**:
