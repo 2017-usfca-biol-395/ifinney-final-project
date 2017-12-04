@@ -70,20 +70,15 @@ library("mctoolsr")
 library("phyloseq")
 ```
 
-```{r your-code-here}
-# Add code chunks as needed for your analyses
-# For most analyses, I would recommend splitting the
-# intensive computational part into a seperate R script file
-# and then just load your libraries and the data object here
-# using the `load()` function. Ask me for clarification if this is
-# unclear.
-```
-
 ```{r load, echo = FALSE}
 load("output/phyloseqobject.RData")
 ```
 
-```{r boxplot-of-alpha-diversity}
+```{r load-melted-obj, echo = FALSE}
+melted_obj <- psmelt(phyloseq_obj)
+```
+
+```{r boxplot-of-alpha-diversity, echo = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_richness(pruned_phyloseq,
               x = "host_phenotype_s",
@@ -112,7 +107,7 @@ plot_richness(pruned_phyloseq,
 
 **Figure 2**: Alpha diversity measures of the three sample types, neutered obese and lean cats, colored by gender. Overall, there is a substantial amount of microbial diversty present among males and females in each sample type. Interestingly, the communities present among males in neutered and obese cats showed a higher measure of Shannon diverty.
 
-```{r plot-richness-of-host-}
+```{r plot-richness-by-host-phenotype, echo = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_richness(pruned_phyloseq,
               measures = "Observed",
@@ -121,6 +116,83 @@ theme(axis.text.x = # rotates x axis labels vertically
             element_text(angle = 45,
                          hjust = 1))
 ```
+
+**Figure 3**:
+
+```{r plot-phylogenetic-tree, echo = FALSE}
+pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+plot_tree(pruned_phyloseq,
+          color = "host_phenotype_s",
+          ladderize = TRUE) # this arranges the tree branches from short to long
+```
+
+**Figure 4**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
+
+```{r plot-ordination-of-taxa-by-sample, echo = FALSE}
+pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
+
+p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
+                     type = "BioSample_s",
+                     color = "host_phenotype_s",
+                     title = "Ordination of Lean, Obese, and Obese Weight-loss")
+print(p1)
+```
+
+**FIGUREEEEEEE**: 
+
+```{r plot-ordination-of-phylum-by-sample, echo = FALSE}
+pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
+pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
+
+p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
+                     type = "Class",
+                     color = "host_phenotype_s",
+                     title = "Ordination of Lean, Obese, and Obese Weight-loss by Phylum")
+print(p1)
+```
+
+```{r}
+melted_obj %>%
+  filter(!is.na(Phylum)) %>%
+  filter(host_phenotype_s != "Intact") %>%
+  group_by(host_phenotype_s, Phylum) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  ggplot(aes(x = host_phenotype_s,
+             y = mean_abund,
+             fill = Phylum)) +
+    geom_col()
+
+melted_obj %>%
+  filter(!is.na(Genus)) %>%
+  filter(host_phenotype_s != "Intact") %>%
+  group_by(host_phenotype_s, Genus) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  top_n(5, mean_abund) %>%
+  ggplot(aes(x = host_phenotype_s,
+             y = mean_abund,
+             fill = Genus)) +
+    geom_col()
+
+summ_table <- melted_obj %>%
+  filter(!is.na(Family)) %>%
+  filter(host_phenotype_s != "Intact") %>%
+  group_by(host_phenotype_s, Family) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  top_n(10, mean_abund) %>%
+  spread(key = Family,
+         value = mean_abund) %>%
+  t()
+
+write.csv(summ_table, "output/summary_table.csv")
+summ_table <- read.csv("output/summary_table.csv",
+         skip = 1,
+         header = TRUE)
+kable(summ_table)
+```
+
+**FIGUREEEEE**:
+
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
 # Discussion
