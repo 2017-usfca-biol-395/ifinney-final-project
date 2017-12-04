@@ -124,7 +124,7 @@ theme(axis.text.x = # rotates x axis labels to 45 degree angle
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_tree(pruned_phyloseq,
           color = "host_phenotype_s",
-          ladderize = TRUE) + 
+          ladderize = TRUE) +
   # this arranges the tree branches from short to long
 ggtitle("Phylogenetic Tree between Lean and Obese Neutured Cats")
 ```
