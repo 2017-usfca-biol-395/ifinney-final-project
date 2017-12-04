@@ -124,7 +124,8 @@ theme(axis.text.x = # rotates x axis labels to 45 degree angle
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 plot_tree(pruned_phyloseq,
           color = "host_phenotype_s",
-          ladderize = TRUE) + # this arranges the tree branches from short to long
+          ladderize = TRUE) + 
+  # this arranges the tree branches from short to long
 ggtitle("Phylogenetic Tree between Lean and Obese Neutured Cats")
 ```
 
@@ -137,7 +138,7 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
                      type = "BioSample_s",
                      color = "host_phenotype_s",
-                     title = "Taxa Ordination of Lean, Obese, and Obese Weight-loss")
+                     title = "Taxa Ordination of Lean and Obese Neutered Cats")
 print(p1)
 ```
 
