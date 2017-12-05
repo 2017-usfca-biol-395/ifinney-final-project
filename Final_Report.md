@@ -23,14 +23,14 @@ Sample origin and sequencing
 
 To determine body fat mass and fat free mass, Fischer et al. used a deuterium oxide (D2O) isotopic dilution method purchased from Fisher Scientific. This technique essentially applies a deuterium dilution to some bodily fluid in order to measure the total body water present in the body (Lukaski and Johnson, 1985). For this experiment, a blood sample was taken 12 hours after food fasting and 2 hours after water was withheld. To collect blood and faecal samples, each cat (obese, lean, intact, and neutered) was temporarily housed in a separate location. The dilution was applied to each subcutaneously, or “under the skin” and then after allowing the dilution to equilibrate from a few hours, another blood sample was collected. An IR spectrometer with a class 2A laser was used to analyze the sample.
 
+### Faecal Collection and Bacterial Sequencing
+
+Fresh faecal samples were collected from litter boxes once a day over the period of three days. These samples were placed in sterile tubes and stored at -80 Celsius. To determine that each sample collected was considered “fresh”, Fischer and other staff at the facility observed the cats every 15 minutes and only the faeces produced during this time period was collected.A DNA extraction kit, sold as the Mo Bio PowerSoil Kit, used a bead-beading on each sample to remove the DNA.
+
 Computational
 -------------
 
 These are the methods you used to do your bioinformatic analyses analyses. Should probably be between 0.5 and 1 pages. At a very minimum should include citations for DADA2 and phyloseq if you are doing an amplicon study, or other citations as appropriate.
-
-### Faecal Collection and Bacterial Sequencing
-
-Fresh faecal samples were collected from litter boxes once a day over the period of three days. These samples were placed in sterile tubes and stored at -80 Celsius. To determine that each sample collected was considered “fresh”, Fischer and other staff at the facility observed the cats every 15 minutes and only the faeces produced during this time period was collected.A DNA extraction kit, sold as the Mo Bio PowerSoil Kit, used a bead-beading on each sample to remove the DNA.
 
 Results
 =======
@@ -54,45 +54,45 @@ Subsections are ok in the results section too
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.2025188  max resid 0.508661 
+    ## ... Procrustes: rmse 0.197306  max resid 0.4790904 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.2025403  max resid 0.4746738 
+    ## ... Procrustes: rmse 0.196649  max resid 0.454544 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.1986027  max resid 0.4527984 
+    ## ... Procrustes: rmse 0.2023948  max resid 0.4832343 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.2000285  max resid 0.470731 
+    ## ... Procrustes: rmse 0.1981901  max resid 0.5232048 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.1932936  max resid 0.441699 
+    ## ... Procrustes: rmse 0.192797  max resid 0.4533582 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1993159  max resid 0.4682292 
+    ## ... Procrustes: rmse 0.1932919  max resid 0.4655248 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2012542  max resid 0.4738547 
+    ## ... Procrustes: rmse 0.1784848  max resid 0.3871658 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.1849475  max resid 0.3769288 
+    ## ... Procrustes: rmse 0.1975073  max resid 0.4580415 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1934192  max resid 0.5089123 
+    ## ... Procrustes: rmse 0.2001722  max resid 0.4568945 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1939272  max resid 0.4463018 
+    ## ... Procrustes: rmse 0.1978484  max resid 0.4852998 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.1979674  max resid 0.4714185 
+    ## ... Procrustes: rmse 0.1955715  max resid 0.4774805 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2023262  max resid 0.4689584 
+    ## ... Procrustes: rmse 0.2010795  max resid 0.4809375 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1944826  max resid 0.4235248 
+    ## ... Procrustes: rmse 0.1872377  max resid 0.4089004 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.1958056  max resid 0.4783573 
+    ## ... Procrustes: rmse 0.2022697  max resid 0.4997026 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2009638  max resid 0.4971003 
+    ## ... Procrustes: rmse 0.1966908  max resid 0.4610598 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2009008  max resid 0.5031481 
+    ## ... Procrustes: rmse 0.200151  max resid 0.464283 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.2014426  max resid 0.4778111 
+    ## ... Procrustes: rmse 0.1943151  max resid 0.470526 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2018744  max resid 0.4976999 
+    ## ... Procrustes: rmse 0.2008023  max resid 0.518072 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1882934  max resid 0.4768497 
+    ## ... Procrustes: rmse 0.1961674  max resid 0.4296765 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1926671  max resid 0.4549977 
+    ## ... Procrustes: rmse 0.1948946  max resid 0.4414257 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
