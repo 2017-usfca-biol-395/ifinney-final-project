@@ -103,7 +103,7 @@ plot_richness(pruned_phyloseq,
   ggtitle("Richness Measure of Lean and Obese Neutered Cats") +
 theme(axis.text.x = # rotates x axis labels to 45 degree angle
             element_text(angle = 45,
-                         hjust = 0.5))
+                         hjust = 0.7))
 ```
 
 **Figure 2**: Alpha richness of each particular sample type.
