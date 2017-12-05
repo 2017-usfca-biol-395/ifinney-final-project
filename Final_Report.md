@@ -25,12 +25,12 @@ To determine body fat mass and fat free mass, Fischer et al. used a deuterium ox
 
 ### Faecal Collection and Bacterial Sequencing
 
-Fresh faecal samples were collected from litter boxes once a day over the period of three days. These samples were placed in sterile tubes and stored at -80 Celsius. To determine that each sample collected was considered “fresh”, Fischer and other staff at the facility observed the cats every 15 minutes and only the faeces produced during this time period was collected.A DNA extraction kit, sold as the Mo Bio PowerSoil Kit, used a bead-beading on each sample to remove the DNA.
+Fresh faecal samples were collected from litter boxes once a day over the period of three days. These samples were placed in sterile tubes and stored at -80 Celsius. To determine that each sample collected was considered “fresh”, Fischer and other staff at the facility observed the cats every 15 minutes and only the faeces produced during this time period was collected.A DNA extraction kit, sold as the Mo Bio PowerSoil Kit, used a bead-beading method on each sample to remove the DNA. This method works by placing beads into a tube sample and mechanically shaking the tube to create collisions between the sample material and the beads (Fujimoto *et al.*, 2004). After retrieving the DNA from each tube, the 16R rRNA genes were chosen to be sequenced from each sample. Amplification of this area was preformed using a universal bacterial primer. After, the scientists ran a series of 30-cycle PCR reactions to create multiple copies of each sequence. The amplicon products from each sample was were pooled together in equal concentrations to be purified with beads. The sequences were processed in a Roche 454 sequencer. The beads from the PCR reactions were placed into wells on a sequencing plate where nucleotide bases are added to each well. From there, light is given out to the wells and depending on the light intensity that the camera records, the wells will display the number of nucleotides of the same type (Rothberg and Leamon, 2008).
 
 Computational
 -------------
 
-These are the methods you used to do your bioinformatic analyses analyses. Should probably be between 0.5 and 1 pages. At a very minimum should include citations for DADA2 and phyloseq if you are doing an amplicon study, or other citations as appropriate.
+The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a clean read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output.
 
 Results
 =======
@@ -54,45 +54,45 @@ Subsections are ok in the results section too
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.197306  max resid 0.4790904 
+    ## ... Procrustes: rmse 0.1978338  max resid 0.4830945 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.196649  max resid 0.454544 
+    ## ... Procrustes: rmse 0.1985372  max resid 0.5097278 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2023948  max resid 0.4832343 
+    ## ... Procrustes: rmse 0.1956005  max resid 0.4542993 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1981901  max resid 0.5232048 
+    ## ... Procrustes: rmse 0.1923  max resid 0.4459625 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.192797  max resid 0.4533582 
+    ## ... Procrustes: rmse 0.1995349  max resid 0.4802731 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1932919  max resid 0.4655248 
+    ## ... Procrustes: rmse 0.1893476  max resid 0.4427836 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.1784848  max resid 0.3871658 
+    ## ... Procrustes: rmse 0.190422  max resid 0.4269631 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.1975073  max resid 0.4580415 
+    ## ... Procrustes: rmse 0.2017057  max resid 0.4654596 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.2001722  max resid 0.4568945 
+    ## ... Procrustes: rmse 0.2015864  max resid 0.4798162 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1978484  max resid 0.4852998 
+    ## ... Procrustes: rmse 0.1953091  max resid 0.4526306 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.1955715  max resid 0.4774805 
+    ## ... Procrustes: rmse 0.201312  max resid 0.5043742 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2010795  max resid 0.4809375 
+    ## ... Procrustes: rmse 0.2019088  max resid 0.4733302 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1872377  max resid 0.4089004 
+    ## ... Procrustes: rmse 0.1965682  max resid 0.4375999 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2022697  max resid 0.4997026 
+    ## ... Procrustes: rmse 0.1989621  max resid 0.4556134 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.1966908  max resid 0.4610598 
+    ## ... Procrustes: rmse 0.1995488  max resid 0.480736 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.200151  max resid 0.464283 
+    ## ... Procrustes: rmse 0.200977  max resid 0.4693507 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1943151  max resid 0.470526 
+    ## ... Procrustes: rmse 0.2025318  max resid 0.4813744 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2008023  max resid 0.518072 
+    ## ... Procrustes: rmse 0.1909481  max resid 0.4732785 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1961674  max resid 0.4296765 
+    ## ... Procrustes: rmse 0.2028465  max resid 0.4812519 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1948946  max resid 0.4414257 
+    ## ... Procrustes: rmse 0.1949952  max resid 0.465045 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -143,8 +143,16 @@ Add around 3-4 pages interpreting your results and considering future directions
 Sources Cited
 =============
 
+Callahan,B.J. *et al.* (2016) DADA2: High-resolution sample inference from illumina amplicon data. *Nature Methods*, **13**, 581–583.
+
 Freeman,L.M. *et al.* (2013) Current knowledge about the risks and benefits of raw meat–based diets for dogs and cats. *Journal of the American Veterinary Medical Association*, **243**, 1549–1558.
+
+Fujimoto,S. *et al.* (2004) Optimal bacterial dna isolation method using bead-beating technique. *Memoirs Kyushu Univ Dep Of Health Scis Of Medical Sch*, **3**, 33–38.
 
 Laflamme,D. (1997) Development and validation of a body condition score system for cats: A clinical tool. *Feline practice (Santa Barbara, Calif.: 1990)(USA)*.
 
 Lukaski,H.C. and Johnson,P.E. (1985) A simple, inexpensive method of determining total body water using a tracer dose of d2o and infrared absorption of biological fluids. *The American journal of clinical nutrition*, **41**, 363–370.
+
+McMurdie,P.J. and Holmes,S. (2013) Phyloseq: An r package for reproducible interactive analysis and graphics of microbiome census data. *PLoS ONE*, **8**, e61217.
+
+Rothberg,J.M. and Leamon,J.H. (2008) The development and impact of 454 sequencing. *Nature biotechnology*, **26**, 1117–1124.
