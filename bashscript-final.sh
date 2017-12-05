@@ -1,6 +1,6 @@
 #!/bin/bash
 #This is a bashscript for dumping the data for my final project
-#This metadata was taken from the NCBI SRA database with study ID: SRP000319
+#This metadata was taken from the NCBI SRA database with study ID: SRP066010
 
 export PATH=$PATH:/Users/bellafinn/bioinfo_tools/sratoolkit.2.8.2-1-mac64/bin
 
