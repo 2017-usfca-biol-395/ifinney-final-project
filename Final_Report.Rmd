@@ -1,7 +1,7 @@
 ---
-title: "Final Report: Your Title Here"
-author: "Don Francisco"
-date: "November 22, 2017"
+title: "Final Report: Microbial Analysis in Lean and Obese Neutered Cats"
+author: "Isabella Finney"
+date: "December 14, 2017"
 output:
     github_document: default
     word_document: default
@@ -72,15 +72,17 @@ library("phyloseq")
 
 ```{r load, echo = FALSE}
 load("output/phyloseqobject.RData")
+#Add phyloseq from R script for analysis report
 ```
 
-```{r load-melted-obj, echo = FALSE}
+```{r load-melted-obj, echo = FALSE, message = FALSE}
 melted_obj <- psmelt(phyloseq_obj)
+#Add melted object to be used later for figures
 ```
 
-```{r boxplot-of-alpha-diversity, echo = FALSE}
+```{r boxplot-of-alpha-diversity, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
-#Create pruned phyloseq to create dataset I particularly need
+#Create pruned phyloseq to make dataset with my specific specificationss 
 plot_richness(pruned_phyloseq,
               x = "host_phenotype_s",
               measures = c("Shannon"),
@@ -91,21 +93,7 @@ plot_richness(pruned_phyloseq,
   theme_bw()
 ```
 
-**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats. 
-
-```{r plot-alpha-diversty-by-sex, echo = FALSE, message = FALSE, warning = FALSE}
-pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
-plot_richness(pruned_phyloseq,
-              x = "host_phenotype_s",
-              measures = c("Shannon"),
-              color = "host_sex_s") +
-  xlab("Sample origin") +
-  geom_jitter(width = 0.2) +
-  ggtitle("Alpha Diversity of Lean and Obese Neutered Cats by Sex") +
-  theme_bw()
-```
-
-**Figure 2**: Alpha diversity measures of the three sample types, neutered obese and lean cats, colored by gender. Overall, there is a substantial amount of microbial diversty present among males and females in each sample type. Interestingly, the communities present among males in neutered and obese cats showed a higher measure of Shannon diverty.
+**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats. Overall, there is a substantial amount of microbial diversty present among each sample type.
 
 ```{r plot-richness-by-host-phenotype, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
@@ -118,7 +106,7 @@ theme(axis.text.x = # rotates x axis labels to 45 degree angle
                          hjust = 1))
 ```
 
-**Figure 3**:
+**Figure 2**: Alpha richness of each particular sample type.
 
 ```{r plot-phylogenetic-tree, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
@@ -129,12 +117,12 @@ plot_tree(pruned_phyloseq,
 ggtitle("Phylogenetic Tree between Lean and Obese Neutured Cats")
 ```
 
-**Figure 4**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
+**Figure 3**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
 
 ```{r plot-ordination-of-taxa-by-sample, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
 pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
-
+#Create pruned ordination from pruned phyloseq
 p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
                      type = "BioSample_s",
                      color = "host_phenotype_s",
@@ -142,51 +130,67 @@ p1 <- plot_ordination(pruned_phyloseq, pruned_ord,
 print(p1)
 ```
 
-**FIGUREEEEEEE**: 
+**Figure 4**: Plot ordination of the taxa present from each type of neutered cat.
 
 ```{r barplot-of-phylum, echo = FALSE, message = FALSE, warning = FALSE}
 melted_obj %>%
   filter(!is.na(Phylum)) %>%
+  #"!is.na" means to exclude all "NA's" from the phylum column
   filter(host_phenotype_s != "Intact") %>%
+  #"!=" means excluding
   group_by(host_phenotype_s, Phylum) %>%
   summarize(mean_abund = mean(Abundance)) %>%
   ggplot(aes(x = host_phenotype_s,
              y = mean_abund,
              fill = Phylum)) +
-    geom_col()
+  xlab("Sample Name") +
+  ylab("Mean Abundance") +
+  ggtitle("Phyla Presence in Lean and Obese Neutered Cats") +
+    geom_col(position = "dodge")
+  #columns are aligned next to one another instead of stacked
 ```
 
-**FIGUREEEEEEE*:
+**Figure 5**: Bar plot representing the mean abundance of each phyla present in each sample type (lean netured, obese neutered, and obese and neutered with energy restriction).
 
 ```{r barplot-of-genus, echo = FALSE, message = FALSE, warning = FALSE}
 melted_obj %>%
   filter(!is.na(Genus)) %>%
+  #"!is.na" means to exclude all "NA's" from the genus column
   filter(host_phenotype_s != "Intact") %>%
+  #"!=" means excluding
   group_by(host_phenotype_s, Genus) %>%
   summarize(mean_abund = mean(Abundance)) %>%
   top_n(5, mean_abund) %>%
   ggplot(aes(x = host_phenotype_s,
              y = mean_abund,
              fill = Genus)) +
-    geom_col()
+  xlab("Sample Name") +
+  ylab("Mean Abundance") +
+  ggtitle("Genera Presence in Lean and Obese Neutered Cats") +
+    geom_col(position = "dodge")
+  #columns are aligned next to one another instead of stacked
 ```
 
-**FIGUREEEEE**:
+**Figure 6**: Bar plot representing the mean abundance of the top 5 genera present in each sample type (lean netured, obese neutered, and obese and neutered with energy restriction).
 
 ```{r summary-table-of-genus-types, echo = FALSE}
 melted_obj %>%
   filter(!is.na(Phylum)) %>%
+  #"!is.na" means to exclude all "NA's" from the phylum column
   filter(!is.na(Genus)) %>%
+  #"!is.na" means to exclude all "NA's" from the genus column
   filter(host_phenotype_s != "Intact") %>%
+  #"!=" means excluding
   group_by(host_phenotype_s, Genus) %>%
   summarize(mean_abund = mean(Abundance)) %>%
   top_n(10, mean_abund) %>%
   spread(key = host_phenotype_s,
          value = mean_abund) %>%
+  #spread out table contents for better readability
   kable()
 ```
 
-**FIGUREEEEE**:
+**Table 1**: Summary table showing the mean abundance values for the top 15 genera present among all three sample types.
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
