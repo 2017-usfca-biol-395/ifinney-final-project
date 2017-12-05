@@ -82,7 +82,7 @@ melted_obj <- psmelt(phyloseq_obj)
 
 ```{r boxplot-of-alpha-diversity, echo = FALSE, message = FALSE, warning = FALSE}
 pruned_phyloseq <- subset_samples(phyloseq_obj, host_phenotype_s != "Intact")
-#Create pruned phyloseq to make dataset with my specific specificationss 
+#Create pruned phyloseq to make dataset with my specific specifications
 plot_richness(pruned_phyloseq,
               x = "host_phenotype_s",
               measures = c("Shannon"),
