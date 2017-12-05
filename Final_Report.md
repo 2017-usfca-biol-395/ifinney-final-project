@@ -48,45 +48,45 @@ Subsections are ok in the results section too
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.1932954  max resid 0.4034588 
+    ## ... Procrustes: rmse 0.2005476  max resid 0.504372 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.1962391  max resid 0.5024874 
+    ## ... Procrustes: rmse 0.202496  max resid 0.4777993 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.199269  max resid 0.5070792 
+    ## ... Procrustes: rmse 0.1917057  max resid 0.4286122 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1999771  max resid 0.482079 
+    ## ... Procrustes: rmse 0.2032725  max resid 0.4955563 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.1985765  max resid 0.4478094 
+    ## ... Procrustes: rmse 0.1952372  max resid 0.5230318 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.2004875  max resid 0.4832637 
+    ## ... Procrustes: rmse 0.1960075  max resid 0.477597 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.1902497  max resid 0.5106576 
+    ## ... Procrustes: rmse 0.1991056  max resid 0.4892554 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.1958289  max resid 0.4371787 
+    ## ... Procrustes: rmse 0.1983824  max resid 0.5020568 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1934301  max resid 0.4630615 
+    ## ... Procrustes: rmse 0.1981886  max resid 0.4774134 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1944133  max resid 0.4496902 
+    ## ... Procrustes: rmse 0.1995948  max resid 0.4777933 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.200773  max resid 0.490211 
+    ## ... Procrustes: rmse 0.1992294  max resid 0.4779074 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2005651  max resid 0.4796445 
+    ## ... Procrustes: rmse 0.2021446  max resid 0.496509 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1997174  max resid 0.4574968 
+    ## ... Procrustes: rmse 0.1981925  max resid 0.4615156 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.1969318  max resid 0.5284381 
+    ## ... Procrustes: rmse 0.2021729  max resid 0.4691497 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2036051  max resid 0.4827289 
+    ## ... Procrustes: rmse 0.1913531  max resid 0.4308444 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.1953447  max resid 0.4429638 
+    ## ... Procrustes: rmse 0.1958799  max resid 0.479151 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.2026794  max resid 0.4887594 
+    ## ... Procrustes: rmse 0.2018631  max resid 0.4749856 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.1960359  max resid 0.4572082 
+    ## ... Procrustes: rmse 0.1988014  max resid 0.4761362 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1967695  max resid 0.4641836 
+    ## ... Procrustes: rmse 0.2005088  max resid 0.4875684 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1977759  max resid 0.4589281 
+    ## ... Procrustes: rmse 0.1985077  max resid 0.4567355 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
