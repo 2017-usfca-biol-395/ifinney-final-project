@@ -1,7 +1,7 @@
-Final Report: Your Title Here
+Final Report: Microbial Analysis in Lean and Obese Neutered Cats
 ================
-Don Francisco
-November 22, 2017
+Isabella Finney
+December 14, 2017
 
 Introduction
 ============
@@ -32,86 +32,75 @@ Results
 Subsections are ok in the results section too
 ---------------------------------------------
 
-    ## Warning in estimate_richness(physeq, split = TRUE, measures = measures): The data you have provided does not have
-    ## any singletons. This is highly suspicious. Results of richness
-    ## estimates (for example) are probably unreliable, or wrong, if you have already
-    ## trimmed low-abundance taxa from the data.
-    ## 
-    ## We recommended that you find the un-trimmed data and retry.
-
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/boxplot-of-alpha-diversity-1.png)
 
-**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats.
-
-![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-alpha-diversty-by-sex-1.png)
-
-**Figure 2**: Alpha diversity measures of the three sample types, neutered obese and lean cats, colored by gender. Overall, there is a substantial amount of microbial diversty present among males and females in each sample type. Interestingly, the communities present among males in neutered and obese cats showed a higher measure of Shannon diverty.
+**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats. Overall, there is a substantial amount of microbial diversty present among each sample type.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-richness-by-host-phenotype-1.png)
 
-**Figure 3**:
+**Figure 2**: Alpha richness of each particular sample type.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-phylogenetic-tree-1.png)
 
-**Figure 4**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
+**Figure 3**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
 
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.2021366  max resid 0.4554891 
+    ## ... Procrustes: rmse 0.1932954  max resid 0.4034588 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.1940044  max resid 0.4724872 
+    ## ... Procrustes: rmse 0.1962391  max resid 0.5024874 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.1915036  max resid 0.4433332 
+    ## ... Procrustes: rmse 0.199269  max resid 0.5070792 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1983969  max resid 0.4732628 
+    ## ... Procrustes: rmse 0.1999771  max resid 0.482079 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.1956069  max resid 0.4969752 
+    ## ... Procrustes: rmse 0.1985765  max resid 0.4478094 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.2025706  max resid 0.4957503 
+    ## ... Procrustes: rmse 0.2004875  max resid 0.4832637 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.1953478  max resid 0.4563855 
+    ## ... Procrustes: rmse 0.1902497  max resid 0.5106576 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2012722  max resid 0.4592369 
+    ## ... Procrustes: rmse 0.1958289  max resid 0.4371787 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.196237  max resid 0.4677451 
+    ## ... Procrustes: rmse 0.1934301  max resid 0.4630615 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.186782  max resid 0.48226 
+    ## ... Procrustes: rmse 0.1944133  max resid 0.4496902 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.202516  max resid 0.4691742 
+    ## ... Procrustes: rmse 0.200773  max resid 0.490211 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.1991476  max resid 0.4916595 
+    ## ... Procrustes: rmse 0.2005651  max resid 0.4796445 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1949483  max resid 0.4886636 
+    ## ... Procrustes: rmse 0.1997174  max resid 0.4574968 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2022027  max resid 0.4854359 
+    ## ... Procrustes: rmse 0.1969318  max resid 0.5284381 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2015296  max resid 0.4950734 
+    ## ... Procrustes: rmse 0.2036051  max resid 0.4827289 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.1940311  max resid 0.4369521 
+    ## ... Procrustes: rmse 0.1953447  max resid 0.4429638 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1991258  max resid 0.5074273 
+    ## ... Procrustes: rmse 0.2026794  max resid 0.4887594 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.198115  max resid 0.5167274 
+    ## ... Procrustes: rmse 0.1960359  max resid 0.4572082 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2006332  max resid 0.4799402 
+    ## ... Procrustes: rmse 0.1967695  max resid 0.4641836 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1986183  max resid 0.5105295 
+    ## ... Procrustes: rmse 0.1977759  max resid 0.4589281 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-ordination-of-taxa-by-sample-1.png)
 
-**FIGUREEEEEEE**:
+**Figure 4**: Plot ordination of the taxa present from each type of neutered cat.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/barplot-of-phylum-1.png)
 
-\*\*FIGUREEEEEEE\*:
+**Figure 5**: Bar plot representing the mean abundance of each phyla present in each sample type (lean netured, obese neutered, and obese and neutered with energy restriction).
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/barplot-of-genus-1.png)
 
-**FIGUREEEEE**:
+**Figure 6**: Bar plot representing the mean abundance of the top 5 genera present in each sample type (lean netured, obese neutered, and obese and neutered with energy restriction).
 
 | Genus                       |   neutered|      obese|  Obese after weight loss|
 |:----------------------------|----------:|----------:|------------------------:|
@@ -136,7 +125,7 @@ Subsections are ok in the results section too
 | Streptococcus               |         NA|   3.694444|                       NA|
 | Turicibacter                |   5.453125|         NA|                       NA|
 
-**FIGUREEEEE**:
+**Table 1**: Summary table showing the mean abundance values for the top 15 genera present among all three sample types.
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
