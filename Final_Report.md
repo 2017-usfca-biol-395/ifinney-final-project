@@ -6,7 +6,7 @@ December 14, 2017
 Introduction
 ============
 
-Manuel A. Fischer et al. published a paper titled *Effects of obesity, energy restriction and neutering on the faecal microbiota of cats* where they performed a broad experiment that looked at the overall differences in microbiota between leans cats that were neutered and intact and neutered obese cats that did and didn’t undergo energy restriction. The focus of my investigation was to observe the level of diversity using abundance and richness over the different types of neutered cats using the dataset I obtained from this study. Looking at these variables for this particular dataset, I hoped to determine exactly which microbial communities caused those differences. I hypothesized that there would be distinctive differences in the diversity and abundance in the microbial communities between lean and obese cats.
+Manuel A. Fischer et al. published a paper titled *Effects of obesity, energy restriction and neutering on the faecal microbiota of cats* where they performed a broad experiment that looked at the overall differences in microbiota between leans cats that were neutered and intact and neutered obese cats before and after undergoing energy restriction. The focus of my investigation was to observe the level of diversity using abundance and richness over the different types of neutered cats using the dataset I obtained from this study. Looking at these variables for this particular dataset, I hoped to determine exactly which microbial communities caused those differences. I hypothesized that there would be distinctive differences in the diversity and abundance in the microbial communities between lean and obese cats.
 
 Methods
 =======
@@ -35,70 +35,90 @@ The process to computationally parse and analyze the data gathered was accomplis
 Results
 =======
 
-Subsections are ok in the results section too
----------------------------------------------
+For all figures that are grouped by the sample types “neutered”, “obese”, and “Obese after weight loss”: “Neutered” stands for neutered lean cats, “obese” stands for neutered obese cats, and “Obese after weight loss” represents the sequences that were taken from the obese cats after energy restriction.
+
+Microbial Diversity
+-------------------
+
+The first thing I investigated was the alpha diversity present in all samples types for neutered cats (Figure 1 and 2). Alpha diversity measures the diversity present at the local species scale. Here, I used three different diversity metrics (Shannon entropy, Simpson’s index, and species richness) to compare whether the level microbial diversity present translated across different measured interpretations. Ecologically, richness shows the number of different species that are represented within the community (without taking into account the outliers, or rarities, present within each sample). Shannon entropy calculates diversity by quantifying the entropy present with a species. It looks at both the abundance and evenness within the present species (Fierer and Jackson, 2006). Simpson’s index calculates the probability of species presence (Grundmann *et al.*, 2001). Looking all at every single sample, I noticed there was about the same measure of diversity in the obese cats (before and after energy restriction). The observed data shows that obese cats showed more alpha diversity than the neutered lean cats. This finding was further supported when the sample were plotted using Shannon entropy and Simpson’s index. These two indices showed that within the microorganisms found on all obese cats, there was much less evenness present. Another interesting observation to note is that neutered obese cats before undergoing a diet restriction showed the highest level of microbial diversity.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/boxplot-of-alpha-diversity-1.png)
 
-**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats. Overall, there is a substantial amount of microbial diversty present among each sample type.
+**Figure 1**: Alpha diversity measures of the three sample types, neutered obese and lean cats. Overall, there is a substantial amount of microbial diversity present among each sample type.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-richness-by-host-phenotype-1.png)
 
 **Figure 2**: Alpha richness of each particular sample type.
 
+Phylogeny and Ordination
+------------------------
+
+Seeing that there was a higher level of diversity and abundance present but a decrease in evenness in obese cats over lean cats, I was prompted to further investigate whether I could determine if there were any specific microbiota that were cause of this differentiation. Making phylogenetic tree and a plot ordination on taxa gave me a preliminary view on the ordering of the taxa and phylum present within the different cat phenotypes. Using a programming tool called Geneious, I then created a phylogenetic tree to see if any of these phenotypes shared any evolutionary relationships within their microbiota (Figure 3). The patterns in the branching of the tree reflect how the species evolved from common ancestors. The tips of the tree represent samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogeny (Gouy *et al.*, 2009). For this dataset, the phylogenetic tree didn’t present any distinctive relationships in the microbiota. The plot ordination showed that the majority of the taxa present within lean and obese cats are highly similar to one another (Figure 4).
+
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-phylogenetic-tree-1.png)
 
-**Figure 3**: This is an inferred phylogenetic tree of sequences present within the three sample types. The tips of the tree represents samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogengy.
+**Figure 3**: This is an inferred phylogenetic tree of sequences present within the three sample types.
 
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.197964  max resid 0.4437238 
+    ## ... Procrustes: rmse 0.2025285  max resid 0.4690405 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.19856  max resid 0.4703534 
+    ## ... Procrustes: rmse 0.1964863  max resid 0.454124 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2029136  max resid 0.4710915 
+    ## ... Procrustes: rmse 0.1950685  max resid 0.4455011 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1970864  max resid 0.4913527 
+    ## ... Procrustes: rmse 0.1998741  max resid 0.4613203 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.1964678  max resid 0.4299426 
+    ## ... Procrustes: rmse 0.1983518  max resid 0.4922422 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1997249  max resid 0.4860232 
+    ## ... Procrustes: rmse 0.1984247  max resid 0.4659118 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2040667  max resid 0.4888075 
+    ## ... Procrustes: rmse 0.2008106  max resid 0.4836927 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.1978519  max resid 0.4397756 
+    ## ... Procrustes: rmse 0.2030653  max resid 0.4989316 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1976063  max resid 0.5150685 
+    ## ... Procrustes: rmse 0.1919536  max resid 0.4677155 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1941372  max resid 0.4737125 
+    ## ... Procrustes: rmse 0.1882319  max resid 0.4633172 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.1999958  max resid 0.4829969 
+    ## ... Procrustes: rmse 0.1964342  max resid 0.4443282 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.1971207  max resid 0.4891795 
+    ## ... Procrustes: rmse 0.197241  max resid 0.4599592 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.196696  max resid 0.503792 
+    ## ... Procrustes: rmse 0.2001282  max resid 0.4611138 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.1954114  max resid 0.4289217 
+    ## ... Procrustes: rmse 0.1934587  max resid 0.4802 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.1998709  max resid 0.4710926 
+    ## ... Procrustes: rmse 0.1901514  max resid 0.4340606 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2004592  max resid 0.4892891 
+    ## ... Procrustes: rmse 0.1998765  max resid 0.4610506 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1963506  max resid 0.4280638 
+    ## ... Procrustes: rmse 0.1976814  max resid 0.4785526 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2004653  max resid 0.4536555 
+    ## ... Procrustes: rmse 0.1977098  max resid 0.4442361 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1929209  max resid 0.4579162 
+    ## ... Procrustes: rmse 0.2009141  max resid 0.4897763 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.194315  max resid 0.4358269 
+    ## ... Procrustes: rmse 0.2012629  max resid 0.454286 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-ordination-of-taxa-by-sample-1.png)
 
 **Figure 4**: Plot ordination of the taxa present from each type of neutered cat.
+
+Influence of Microbial Communities
+----------------------------------
+
+### Phyla-level Abundance
+
+The creation of bar plots was used to observe the mean species abundance levels present among the phyla and genera of these cats. Looking at the abundance in phyla produced some interesting results (Figure 5). Among all three sample types, the phylum Actinobacteria was the second highest in abundance. In lean cats, the phylum Firmicutes had the highest level of abundance which is drastically different to its presence in obese cats where it presented as one of the lowest phyla levels. Obese cats, before and after dietary restriction, showed that Bacteriodetes was highly expressed compared to lean cats (which was the second least expressed phyla). I also observed that obese cats had the addition of the phylum Synergistetes at a very high abundance but that level of abundance was greatly reduced in the obese cats that underwent energy restrictions.
+
+### Genera-level Abundance
+
+Because there were so many genera, I decided to investigate the mean abundance levels in the highest expressed genera (Figure 6) as well as obtain their abundances values (Table 1). The genus *Clostridrium*, from phylum Firmicutes, expressed the highest levels of abundance in lean cats. It had a mean abundance of about 35. In contrast, the genera *Olsenella* and *Eggerthella* (from phylum Actinobacteria) are much more expressed than other genera. *Olsenella* produced a mean value of about 28 and *Eggerthella*, which is only present in energy-restricted obese cats, expressed at a value of about 27. There are some genera that are present in the highest portion that show up in lean cats but not in obese cats and vice-versa.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/barplot-of-phylum-1.png)
 
@@ -133,8 +153,6 @@ Subsections are ok in the results section too
 
 **Table 1**: Summary table showing the mean abundance values for the top 15 genera present among all three sample types.
 
-In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
-
 Discussion
 ==========
 
@@ -145,9 +163,15 @@ Sources Cited
 
 Callahan,B.J. *et al.* (2016) DADA2: High-resolution sample inference from illumina amplicon data. *Nature Methods*, **13**, 581–583.
 
+Fierer,N. and Jackson,R.B. (2006) The diversity and biogeography of soil bacterial communities. *Proceedings of the National Academy of Sciences of the United States of America*, **103**, 626–631.
+
 Freeman,L.M. *et al.* (2013) Current knowledge about the risks and benefits of raw meat–based diets for dogs and cats. *Journal of the American Veterinary Medical Association*, **243**, 1549–1558.
 
 Fujimoto,S. *et al.* (2004) Optimal bacterial dna isolation method using bead-beating technique. *Memoirs Kyushu Univ Dep Of Health Scis Of Medical Sch*, **3**, 33–38.
+
+Gouy,M. *et al.* (2009) SeaView version 4: A multiplatform graphical user interface for sequence alignment and phylogenetic tree building. *Molecular biology and evolution*, **27**, 221–224.
+
+Grundmann,H. *et al.* (2001) Determining confidence intervals when measuring genetic diversity and the discriminatory abilities of typing methods for microorganisms. *Journal of clinical microbiology*, **39**, 4190–4192.
 
 Laflamme,D. (1997) Development and validation of a body condition score system for cats: A clinical tool. *Feline practice (Santa Barbara, Calif.: 1990)(USA)*.
 
