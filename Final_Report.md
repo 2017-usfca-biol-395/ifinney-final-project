@@ -6,7 +6,7 @@ December 14, 2017
 Introduction
 ============
 
-Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles.
+Manuel A. Fischer et al. published a paper titled *Effects of obesity, energy restriction and neutering on the faecal microbiota of cats* where they performed a broad experiment that looked at the overall differences in microbiota between leans cats that were neutered and intact and neutered obese cats that did and didn’t undergo energy restriction. The focus of my investigation was to observe the level of diversity using abundance and richness over the different types of neutered cats using the dataset I obtained from this study. Looking at these variables for this particular dataset, I hoped to determine exactly which microbial communities caused those differences. I hypothesized that there would be distinctive differences in the diversity and abundance in the microbial communities between lean and obese cats.
 
 Methods
 =======
@@ -25,12 +25,12 @@ To determine body fat mass and fat free mass, Fischer et al. used a deuterium ox
 
 ### Faecal Collection and Bacterial Sequencing
 
-Fresh faecal samples were collected from litter boxes once a day over the period of three days. These samples were placed in sterile tubes and stored at -80 Celsius. To determine that each sample collected was considered “fresh”, Fischer and other staff at the facility observed the cats every 15 minutes and only the faeces produced during this time period was collected.A DNA extraction kit, sold as the Mo Bio PowerSoil Kit, used a bead-beading method on each sample to remove the DNA. This method works by placing beads into a tube sample and mechanically shaking the tube to create collisions between the sample material and the beads (Fujimoto *et al.*, 2004). After retrieving the DNA from each tube, the 16R rRNA genes were chosen to be sequenced from each sample. Amplification of this area was preformed using a universal bacterial primer. After, the scientists ran a series of 30-cycle PCR reactions to create multiple copies of each sequence. The amplicon products from each sample was were pooled together in equal concentrations to be purified with beads. The sequences were processed in a Roche 454 sequencer. The beads from the PCR reactions were placed into wells on a sequencing plate where nucleotide bases are added to each well. From there, light is given out to the wells and depending on the light intensity that the camera records, the wells will display the number of nucleotides of the same type (Rothberg and Leamon, 2008). Sequences were trimmed and those with less than 150 base pairs were removed as well as those with ambiguous base calls and large homopolymers. Operational taxonomic units(OTU) were gather from de-noised sequences and chimeras were removed. Using BLASTn, these OTU were taxonomically classified against an established database. The OTU that were classified were compiled into each taxonomic level and rarefaction, or density lessening, was prefromed to remove biases within the sequences. The raw sequences were then deposited at the NCBI Sequence Read Archive.
+Fresh faecal samples were collected from litter boxes once a day over the period of three days. These samples were placed in sterile tubes and stored at -80 degrees Celsius. To determine that each sample collected was considered “fresh”, Fischer and other staff at the facility observed the cats every 15 minutes and only the faeces produced during this time period was collected.A DNA extraction kit, sold as the Mo Bio PowerSoil Kit, used a bead-beading method on each sample to remove the DNA. This method works by placing beads into a tube sample and mechanically shaking the tube to create collisions between the sample material and the beads (Fujimoto *et al.*, 2004). After retrieving the DNA from each tube, the 16R rRNA genes were chosen to be sequenced from each sample. Amplification of this area was preformed using a universal bacterial primer. After, the scientists ran a series of 30-cycle PCR reactions to create multiple copies of each sequence. The amplicon products from each sample was were pooled together in equal concentrations to be purified with beads. The sequences were processed in a Roche 454 sequencer. The beads from the PCR reactions were placed into wells on a sequencing plate where nucleotide bases are added to each well. From there, light is given out to the wells and depending on the light intensity that the camera records, the wells will display the number of nucleotides of the same type (Rothberg and Leamon, 2008). Sequences were trimmed and those with less than 150 base pairs were removed as well as those with ambiguous base calls and large homopolymers. Operational taxonomic units (OTU) were gathered from de-noised sequences and chimeras were removed. Using BLASTn, these OTU were taxonomically classified against an established database. The OTU that were classified were compiled into each taxonomic level and rarefaction, or density lessening, was perfromed to remove biases within the sequences. The raw sequences were then deposited at the NCBI Sequence Read Archive.
 
 Computational
 -------------
 
-The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to download the SRA table from NCBI. Using Terminal, I downloaded the SRA toolkit onto my computer and created a for loop script that would download the sequences. I then created an RScript that would parse the sequences downloaded.Next was to install all the necessary packages needed to get the dataset in the best suited format possible. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a clean read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output.Using dplyr and the psmelt function, a melted table was created from that phyloseq object. This process combines all the sample information, OTU, taxonomic classification into a single dataframe to produce graphics easily. Both objects were added to an Rmd file where I eventually created the figures for my analysis.
+The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to download the SRA table from NCBI. Using Terminal, I downloaded the SRA toolkit onto my computer and created a for loop script that would download the sequences. I then created an RScript that would parse the sequences downloaded. Next was to install all the necessary packages needed to get the dataset in the best suited format possible. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a clean read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output. Using dplyr and the psmelt function, a melted table was created from that phyloseq object. This process combines all the sample information, OTU, taxonomic classification into a single dataframe to produce graphics easily. Both objects were added to an Rmd file where I eventually created the figures for my analysis.
 
 Results
 =======
@@ -54,45 +54,45 @@ Subsections are ok in the results section too
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.2022801  max resid 0.4740713 
+    ## ... Procrustes: rmse 0.197964  max resid 0.4437238 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.2001067  max resid 0.4927768 
+    ## ... Procrustes: rmse 0.19856  max resid 0.4703534 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.199139  max resid 0.4613545 
+    ## ... Procrustes: rmse 0.2029136  max resid 0.4710915 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.2007912  max resid 0.4761786 
+    ## ... Procrustes: rmse 0.1970864  max resid 0.4913527 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.1912094  max resid 0.446521 
+    ## ... Procrustes: rmse 0.1964678  max resid 0.4299426 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.199302  max resid 0.4847582 
+    ## ... Procrustes: rmse 0.1997249  max resid 0.4860232 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.1943065  max resid 0.4953004 
+    ## ... Procrustes: rmse 0.2040667  max resid 0.4888075 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2019947  max resid 0.4841564 
+    ## ... Procrustes: rmse 0.1978519  max resid 0.4397756 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1992998  max resid 0.4977217 
+    ## ... Procrustes: rmse 0.1976063  max resid 0.5150685 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1987229  max resid 0.5045608 
+    ## ... Procrustes: rmse 0.1941372  max resid 0.4737125 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2028826  max resid 0.4910039 
+    ## ... Procrustes: rmse 0.1999958  max resid 0.4829969 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.1997949  max resid 0.4555351 
+    ## ... Procrustes: rmse 0.1971207  max resid 0.4891795 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1964295  max resid 0.4674588 
+    ## ... Procrustes: rmse 0.196696  max resid 0.503792 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.1927305  max resid 0.4357952 
+    ## ... Procrustes: rmse 0.1954114  max resid 0.4289217 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2010064  max resid 0.5142903 
+    ## ... Procrustes: rmse 0.1998709  max resid 0.4710926 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2026716  max resid 0.4914949 
+    ## ... Procrustes: rmse 0.2004592  max resid 0.4892891 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1934674  max resid 0.4849956 
+    ## ... Procrustes: rmse 0.1963506  max resid 0.4280638 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.1976349  max resid 0.4609543 
+    ## ... Procrustes: rmse 0.2004653  max resid 0.4536555 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1972361  max resid 0.4690562 
+    ## ... Procrustes: rmse 0.1929209  max resid 0.4579162 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1951554  max resid 0.4368553 
+    ## ... Procrustes: rmse 0.194315  max resid 0.4358269 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
