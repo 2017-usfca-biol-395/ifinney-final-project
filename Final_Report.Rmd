@@ -231,9 +231,9 @@ Biggest Issue:
 -I found that for this particular dataset, my hypothesis was correct.
 -The reason why there’s a higher level of abundance and diversity in obese cats is because there is more diversity in their microbial communities. 
 
--Looking at the different microbial communities, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. Some of the trends seen from phyla abundance translated over to genera abundance. For example, obese cats expressed extremely high levels of abundance in the phylum Actinobacteria and that trends followed through to genera presence as the genera *Olsenella and *Eggerthella was also one of the most highly expressed. 
+-Looking at the different microbial communities, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. Some of the trends seen from phyla abundance translated over to genera abundance. For example, obese cats expressed extremely high levels of abundance in the phylum Actinobacteria and that trends followed through to genera presence as the genera *Olsenella* and *Eggerthella* was also one of the most highly expressed. 
 
--Through external research into those genera that were more expressed I did see that these species had some characteristics that affect weight gain and metabolism. In particular, Clostridium influences metabolism and body composition. 
+-Through external research into those genera that were more expressed I did see that these species had some characteristics that affect weight gain and metabolism. In particular, *Clostridium* influences metabolism and body composition. 
 
 -The reason why this research this is so important is because there aren’t sufficient enough solutions to combating obesity in cats. Mainstream media idealizes the image of fat cats, for example with the grumpy cat and fat cat memes, so people often don’t even realize there’s an issue with animal obesity.
 
