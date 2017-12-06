@@ -63,45 +63,45 @@ Seeing that there was a higher level of diversity and abundance present but a de
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.2025285  max resid 0.4690405 
+    ## ... Procrustes: rmse 0.2020761  max resid 0.512255 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.1964863  max resid 0.454124 
+    ## ... Procrustes: rmse 0.2035773  max resid 0.4836843 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.1950685  max resid 0.4455011 
+    ## ... Procrustes: rmse 0.1865252  max resid 0.4256425 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1998741  max resid 0.4613203 
+    ## ... Procrustes: rmse 0.1996466  max resid 0.4676628 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.1983518  max resid 0.4922422 
+    ## ... Procrustes: rmse 0.2014296  max resid 0.4653611 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1984247  max resid 0.4659118 
+    ## ... Procrustes: rmse 0.2022334  max resid 0.5111675 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2008106  max resid 0.4836927 
+    ## ... Procrustes: rmse 0.1972874  max resid 0.5074299 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2030653  max resid 0.4989316 
+    ## ... Procrustes: rmse 0.2013174  max resid 0.4703587 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1919536  max resid 0.4677155 
+    ## ... Procrustes: rmse 0.2035266  max resid 0.5001533 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1882319  max resid 0.4633172 
+    ## ... Procrustes: rmse 0.1918072  max resid 0.4443072 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.1964342  max resid 0.4443282 
+    ## ... Procrustes: rmse 0.198136  max resid 0.5092744 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.197241  max resid 0.4599592 
+    ## ... Procrustes: rmse 0.2018568  max resid 0.4912905 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.2001282  max resid 0.4611138 
+    ## ... Procrustes: rmse 0.2028101  max resid 0.4848664 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.1934587  max resid 0.4802 
+    ## ... Procrustes: rmse 0.2020048  max resid 0.4846279 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.1901514  max resid 0.4340606 
+    ## ... Procrustes: rmse 0.199298  max resid 0.4644058 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.1998765  max resid 0.4610506 
+    ## ... Procrustes: rmse 0.1852511  max resid 0.402125 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1976814  max resid 0.4785526 
+    ## ... Procrustes: rmse 0.1958606  max resid 0.5062942 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.1977098  max resid 0.4442361 
+    ## ... Procrustes: rmse 0.1987337  max resid 0.4679711 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2009141  max resid 0.4897763 
+    ## ... Procrustes: rmse 0.1948479  max resid 0.431363 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.2012629  max resid 0.454286 
+    ## ... Procrustes: rmse 0.1934268  max resid 0.4582394 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -156,7 +156,27 @@ Because there were so many genera, I decided to investigate the mean abundance l
 Discussion
 ==========
 
-Add around 3-4 pages interpreting your results and considering future directions one might take in analyzing these data.
+Caveats
+-------
+
+-I didn’t take into account other variables like sex and age -The data sample is small, only 24 cats were observed +IN those 24 cats there was an even number of obese cats between gender but in the neutered lean cats there -The study was only over the course of 6 months, which can be considered a relatively short time short period of time. To get a better idea at the changes that occur over these phenotypes, maybe a study could be done that took over the course of a year or so.
+
+Biggest Issue: -In all sincerity, when I had to perform the pipeline, after the quality checks it was clear that were some serious errors in the sequences. I’m sure this seriously skewed the results for the data I produced. Mention Zimmerman’s comment
+
+-Example why I could see that my data showed issues: Firmicutes are known to be the predominant phylum in the intestinal tract of animals, that wasn’t the case for my data when I looked at phyla but it was very present when I saw that the highest genus species.
+
+Conclusion and Further Direction
+--------------------------------
+
+-I found that for this particular dataset, my hypothesis was correct. -The reason why there’s a higher level of abundance and diversity in obese cats is because there is more diversity in their microbial communities.
+
+-Looking at the different microbial communities, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. Some of the trends seen from phyla abundance translated over to genera abundance. For example, obese cats expressed extremely high levels of abundance in the phylum Actinobacteria and that trends followed through to genera presence as the genera *Olsenella* and *Eggerthella* was also one of the most highly expressed.
+
+-Through external research into those genera that were more expressed I did see that these species had some characteristics that affect weight gain and metabolism. In particular, *Clostridium* influences metabolism and body composition.
+
+-The reason why this research this is so important is because there aren’t sufficient enough solutions to combating obesity in cats. Mainstream media idealizes the image of fat cats, for example with the grumpy cat and fat cat memes, so people often don’t even realize there’s an issue with animal obesity.
+
+With more research into diversity and the microbiota that heavily influence obesity rates, nutritional dietary plans and medical application could be implemented to help those poor fat cats.
 
 Sources Cited
 =============
