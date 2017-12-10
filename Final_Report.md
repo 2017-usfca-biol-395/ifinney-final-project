@@ -6,7 +6,15 @@ December 14, 2017
 Introduction
 ============
 
-Manuel A. Fischer et al. published a paper titled *Effects of obesity, energy restriction and neutering on the faecal microbiota of cats* where they performed a broad experiment that looked at the overall differences in microbiota between leans cats that were neutered and intact and neutered obese cats before and after undergoing energy restriction. The focus of my investigation was to observe the level of diversity using abundance and richness over the different types of neutered cats using the dataset I obtained from this study. Looking at these variables for this particular dataset, I hoped to determine exactly which microbial communities caused those differences. I hypothesized that there would be distinctive differences in the diversity and abundance in the microbial communities between lean and obese cats.
+In the past couple of years, the images “fat cats” have become a popular sight on many social media networks, ranging from funny videos of cats toppling over and fat cat memes to having entire pages dedicated to showcasing fat cats. Mainstream media glorifies and even commodifies from these images of fat cats because they’re seen as “adorable and funny”. One of the main problems presented here is the polarization of obesity between humans and animals. The risk of obesity in humans is something that the majority society views as a public health issue that needs to be eradicated. In contrast, obesity in domesticated animals, especially cats, are something to be celebrated so often owners continue to reward their fury friends with more food and treats which contributes to them gaining even more weight and eventually experiencing obesity.
+
+Obesity is defined as the accumulation of excess adipose tissue in the body that is sufficient enough to impair body health or function. Those categorized as obese are generally considered to be 25-27% above the ideal body weight (Linder and Mueller, 2014). Obesity is a disorder that humans and domesticated animals, like cats, commonly suffer from. Both humans and domesticated animals are experiencing a steady increase in the number of affected individuals (Scarlett *et al.*, 1994). Obesity is usually the result of an imbalance in dietary intake, energy utilization, or genetics. The factors that may lead to these imbalances range from a variety of internal and causes like activity level, environmental lifestyle, hormonal levels, and genetics. Some of the effects that obesity can have on domesticated animals can be highly detrimental. It can lead to problems such as orthopedic disease, diabetes, cardiorespiratory disease, urinary disorders, dermatological diseases, and neoplasia (German, 2006). The culmination of these problems eventually leads an overall poor health and an inevitable increase in mortality.
+
+Currently, the prevalence of obese and overweight cats has been calculated between 40-60% (Colliard *et al.*, 2009). The relationship between cats and their human owners is important because it affects the dietary and behavioral development in many of the cats that are overweight or obese. Many obese cats fail to establish normal feeding behaviors, Controlled satiety, and adept exercise as a result of misinterpretation and lack of attention from their owners. For dogs, eating and exercise are activities that are shared socially between the dog and its human. Because owners are actively engaged with their dogs, there is more control over the balance how much the dog intakes as well as how much exercise the dog receives. The dynamic between cats and their owners is often much less connected. Most cats, in contrast, do not seek or need as much social interaction with their owners so this leads to their owners having less supervision over their health. Owners will often assume that their cat is asking for food when they initiate contact (Kienzle *et al.*, 2001). Their behaviors get misinterpreted and their owner gives them food which then results in the cat learning that initiating contact results in a reward of food. Obviously, the cat will continue this behavior more often and the owner will continue to provide “the reward”. Now, the cat will have an imbalance in the amount of dietary intake and exercise their receiving on a daily basis which leads to the cat becoming obese.
+
+One of the most prevalent and studied factors for the cause of obesity in cats is neutering. It has been highly suggested that neutering causes a decrease in the metabolic rate of these animals (Hoenig and Ferguson, 2002). Scientists have also noted that neutering also leads to these animals having an increased intake in food consumption from the culmination of more satiety hormones (Flynn *et al.*, 1996). Although neutering can be linked to an increase in weight gain and obesity, the positive effect it is has in population control and the environment is highly beneficial. About 100 million feral and abandoned cats reside in the United States. These are cats are responsible for about almost a billion injuries or deaths that occur among other wildlife like birds, small mammals, reptiles, amphibians, and fish (Scott *et al.*, 2002). Thanks to programs that practice trap-neuter-return (TNR) practices or rescues, the number of the feline population can be better controlled as well as the longevity of other wildlife populations (Gibson *et al.*, 2002). Because the benefits of neutering outweigh the negative effects, most pet owners will often choose the former so other measures need to be taken to prevent this growing issue. The most common solutions to treating and preventing obesity are with diet restriction and energy expenditure (Sloth, 1992). Although these solutions can be effective, they often rely on the dedication of the individual pet owner to provide adequate treatment which is not always the most reliable option especially when considering serious cases of obesity. Presently, there are no medical applications that have been implemented to solve this problem. One potential strategy could be to examine how the microbiome of obese cats differs from that of lean cats. In studies done on mice, high-fat diets have been linked to differences in the ratio of certain genus species. Focusing on these possible differences could potentially lead to new applications for obesity treatment in the feline population.
+
+Manuel A. Fischer et al. published a paper titled *Effects of obesity, energy restriction and neutering on the faecal microbiota of cats* where they performed a broad experiment that looked at the overall differences in the microbiota between lean cats that were neutered and intact and neutered obese cats before and after undergoing energy restriction. The focus of my investigation was to observe the level of diversity using abundance and richness over the different types of neutered cats using the dataset I obtained from this study. Looking at these variables for this particular dataset, I hoped to determine exactly which microbial communities caused those differences. I hypothesized that there would be distinctive differences in the diversity and abundance in the microbial communities between lean and obese cats which contribute to the present differences seen in their weight.
 
 Methods
 =======
@@ -30,7 +38,7 @@ Fresh faecal samples were collected from litter boxes once a day over the period
 Computational
 -------------
 
-The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to download the SRA table from NCBI. Using Terminal, I downloaded the SRA toolkit onto my computer and created a for loop script that would download the sequences. I then created an RScript that would parse the sequences downloaded. Next was to install all the necessary packages needed to get the dataset in the best suited format possible. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a clean read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output. Using dplyr and the psmelt function, a melted table was created from that phyloseq object. This process combines all the sample information, OTU, taxonomic classification into a single dataframe to produce graphics easily. Both objects were added to an Rmd file where I eventually created the figures for my analysis.
+The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to download the SRA table from NCBI. Using Terminal, I downloaded the SRA toolkit onto my computer and created a for loop script that would download the sequences. I then created an RScript that would parse the sequences downloaded. Next was to install all the necessary packages needed to get the dataset in the best suited format possible. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a clean read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output. Using dplyr and the psmelt function, a melted table was created from that phyloseq object. This process combines all the sample information, OTU, taxonomic classification into a single dataframe to produce graphics easily. Both objects were added to an Rmd file where I eventually created the figures for my analysis. Another important component I added to help create my figures was downloading a platform called Geneious. Essentially this platform is as a software application framework that serves to organize and analyze biological data (Kearse *et al.*, 2012). I used this software to create my phylogenetic tree.
 
 Results
 =======
@@ -53,7 +61,7 @@ The first thing I investigated was the alpha diversity present in all samples ty
 Phylogeny and Ordination
 ------------------------
 
-Seeing that there was a higher level of diversity and abundance present but a decrease in evenness in obese cats over lean cats, I was prompted to further investigate whether I could determine if there were any specific microbiota that were cause of this differentiation. Making phylogenetic tree and a plot ordination on taxa gave me a preliminary view on the ordering of the taxa and phylum present within the different cat phenotypes. Using a programming tool called Geneious, I then created a phylogenetic tree to see if any of these phenotypes shared any evolutionary relationships within their microbiota (Figure 3). The patterns in the branching of the tree reflect how the species evolved from common ancestors. The tips of the tree represent samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogeny (Gouy *et al.*, 2009). For this dataset, the phylogenetic tree didn’t present any distinctive relationships in the microbiota. The plot ordination showed that the majority of the taxa present within lean and obese cats are highly similar to one another (Figure 4).
+Seeing that there was a higher level of diversity and abundance present but a decrease in evenness in obese cats over lean cats, I was prompted to further investigate whether I could determine if there were any specific microbiota that were cause of this differentiation. Making phylogenetic tree and a plot ordination on taxa gave me a preliminary view on the ordering of the taxa and phylum present within the different cat phenotypes. Using a programming tool called Geneious, I then created a phylogenetic tree to see if any of these phenotypes shared any evolutionary relationships within their microbiota (Figure 3). The patterns in the branching of the tree reflect how the species evolved from common ancestors. The tips of the tree represent samples where each particular taxa occurred. The tree itself represents the maximum likelihood of phylogeny (Gouy *et al.*, 2009). For this dataset, the phylogenetic tree didn’t present any distinctive relationships in the microbiota. Each of the phenotypes seemed to be represented in each branch equally. The plot ordination showed that the majority of the taxa present within lean and obese cats are highly similar to one another, with only a few differences in each sample type (Figure 4).
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/plot-phylogenetic-tree-1.png)
 
@@ -63,45 +71,45 @@ Seeing that there was a higher level of diversity and abundance present but a de
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.2020761  max resid 0.512255 
+    ## ... Procrustes: rmse 0.1929912  max resid 0.4448326 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.2035773  max resid 0.4836843 
+    ## ... Procrustes: rmse 0.1945451  max resid 0.4647534 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.1865252  max resid 0.4256425 
+    ## ... Procrustes: rmse 0.1876916  max resid 0.4610478 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1996466  max resid 0.4676628 
+    ## ... Procrustes: rmse 0.1947967  max resid 0.4655472 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.2014296  max resid 0.4653611 
+    ## ... Procrustes: rmse 0.2024661  max resid 0.4963979 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.2022334  max resid 0.5111675 
+    ## ... Procrustes: rmse 0.1970271  max resid 0.4589097 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.1972874  max resid 0.5074299 
+    ## ... Procrustes: rmse 0.2016828  max resid 0.4912517 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2013174  max resid 0.4703587 
+    ## ... Procrustes: rmse 0.1993891  max resid 0.476839 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.2035266  max resid 0.5001533 
+    ## ... Procrustes: rmse 0.2003395  max resid 0.4783051 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1918072  max resid 0.4443072 
+    ## ... Procrustes: rmse 0.1941665  max resid 0.4901066 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.198136  max resid 0.5092744 
+    ## ... Procrustes: rmse 0.1952887  max resid 0.4538865 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2018568  max resid 0.4912905 
+    ## ... Procrustes: rmse 0.1924215  max resid 0.4812608 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.2028101  max resid 0.4848664 
+    ## ... Procrustes: rmse 0.1983763  max resid 0.4626483 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2020048  max resid 0.4846279 
+    ## ... Procrustes: rmse 0.1952112  max resid 0.4536934 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.199298  max resid 0.4644058 
+    ## ... Procrustes: rmse 0.195128  max resid 0.4764953 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.1852511  max resid 0.402125 
+    ## ... Procrustes: rmse 0.2009138  max resid 0.4997081 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1958606  max resid 0.5062942 
+    ## ... Procrustes: rmse 0.1959924  max resid 0.4738848 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.1987337  max resid 0.4679711 
+    ## ... Procrustes: rmse 0.2003506  max resid 0.4958434 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1948479  max resid 0.431363 
+    ## ... Procrustes: rmse 0.1996426  max resid 0.5047396 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1934268  max resid 0.4582394 
+    ## ... Procrustes: rmse 0.2010218  max resid 0.470127 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -118,7 +126,7 @@ The creation of bar plots was used to observe the mean species abundance levels 
 
 ### Genera-level Abundance
 
-Because there were so many genera, I decided to investigate the mean abundance levels in the highest expressed genera (Figure 6) as well as obtain their abundances values (Table 1). The genus *Clostridrium*, from phylum Firmicutes, expressed the highest levels of abundance in lean cats. It had a mean abundance of about 35. In contrast, the genera *Olsenella* and *Eggerthella* (from phylum Actinobacteria) are much more expressed than other genera. *Olsenella* produced a mean value of about 28 and *Eggerthella*, which is only present in energy-restricted obese cats, expressed at a value of about 27. There are some genera that are present in the highest portion that show up in lean cats but not in obese cats and vice-versa.
+Because there were so many genera, I decided to investigate the mean abundance levels in the highest expressed genera (Figure 6) as well as obtain their abundances values (Table 1). The genus *Clostridrium*, from phylum Firmicutes, expressed the highest levels of abundance in lean cats. It had a mean abundance of about 35. In contrast, the genera *Olsenella* and *Eggerthella* (from phylum Actinobacteria) are much more expressed than other genera. *Olsenella* produced a mean value of about 28 and *Eggerthella*, which is only present in energy-restricted obese cats, expressed at a value of about 27. There are some genera that are present in the highest portion that are represented in lean cats but not in obese cats and vice-versa (Table 1). Some examples of these genera are *Romboustia* and *Prevotella*. In this measure of the highest 15 abundant genera, *Romboustia* is only represented in lean cats and *Prevotella* only expresses abundance in obese cats.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/barplot-of-phylum-1.png)
 
@@ -159,7 +167,7 @@ Discussion
 Caveats
 -------
 
--I didn’t take into account other variables like sex and age -The data sample is small, only 24 cats were observed +IN those 24 cats there was an even number of obese cats between gender but in the neutered lean cats there -The study was only over the course of 6 months, which can be considered a relatively short time short period of time. To get a better idea at the changes that occur over these phenotypes, maybe a study could be done that took over the course of a year or so.
+-I didn’t take into account other variables like sex and age -The data sample is small, only 24 cats were observed +IN those 24 cats there was an even number of obese cats between gender but in the neutered lean cats there -Study only preformed on short-haired cats -The study was only over the course of 6 months, which can be considered a relatively short time short period of time. To get a better idea at the changes that occur over these phenotypes, maybe a study could be done that took over the course of a year or so.
 
 Biggest Issue: -In all sincerity, when I had to perform the pipeline, after the quality checks it was clear that were some serious errors in the sequences. I’m sure this seriously skewed the results for the data I produced. Mention Zimmerman’s comment
 
@@ -183,20 +191,42 @@ Sources Cited
 
 Callahan,B.J. *et al.* (2016) DADA2: High-resolution sample inference from illumina amplicon data. *Nature Methods*, **13**, 581–583.
 
+Colliard,L. *et al.* (2009) Prevalence and risk factors of obesity in an urban population of healthy cats. *Journal of Feline Medicine & Surgery*, **11**, 135–140.
+
 Fierer,N. and Jackson,R.B. (2006) The diversity and biogeography of soil bacterial communities. *Proceedings of the National Academy of Sciences of the United States of America*, **103**, 626–631.
+
+Flynn,M. *et al.* (1996) Effect of ovariohysterectomy on maintenance energy requirement in cats. *Journal of the American Veterinary Medical Association*, **209**, 1572–1581.
 
 Freeman,L.M. *et al.* (2013) Current knowledge about the risks and benefits of raw meat–based diets for dogs and cats. *Journal of the American Veterinary Medical Association*, **243**, 1549–1558.
 
 Fujimoto,S. *et al.* (2004) Optimal bacterial dna isolation method using bead-beating technique. *Memoirs Kyushu Univ Dep Of Health Scis Of Medical Sch*, **3**, 33–38.
 
+German,A.J. (2006) The growing problem of obesity in dogs and cats. *The Journal of Nutrition*, **136**, 1940S–1946S.
+
+Gibson,K.L. *et al.* (2002) A trap, neuter, and release program for feral cats on prince edward island. *The Canadian Veterinary Journal*, **43**, 695.
+
 Gouy,M. *et al.* (2009) SeaView version 4: A multiplatform graphical user interface for sequence alignment and phylogenetic tree building. *Molecular biology and evolution*, **27**, 221–224.
 
 Grundmann,H. *et al.* (2001) Determining confidence intervals when measuring genetic diversity and the discriminatory abilities of typing methods for microorganisms. *Journal of clinical microbiology*, **39**, 4190–4192.
 
+Hoenig,M. and Ferguson,D.C. (2002) Effects of neutering on hormonal concentrations and energy requirements in male and female cats. *American journal of veterinary research*, **63**, 634–639.
+
+Kearse,M. *et al.* (2012) Geneious basic: An integrated and extendable desktop software platform for the organization and analysis of sequence data. *Bioinformatics*, **28**, 1647–1649.
+
+Kienzle,E. *et al.* (2001) The human-animal relationship and overfeeding in cats. *Compendium on Continuing Education for the Practicing Veterinarian*, **23**, 73–73.
+
 Laflamme,D. (1997) Development and validation of a body condition score system for cats: A clinical tool. *Feline practice (Santa Barbara, Calif.: 1990)(USA)*.
+
+Linder,D. and Mueller,M. (2014) Pet obesity management. *Veterinary Clinics: Small Animal Practice*, **44**, 789–806.
 
 Lukaski,H.C. and Johnson,P.E. (1985) A simple, inexpensive method of determining total body water using a tracer dose of d2o and infrared absorption of biological fluids. *The American journal of clinical nutrition*, **41**, 363–370.
 
 McMurdie,P.J. and Holmes,S. (2013) Phyloseq: An r package for reproducible interactive analysis and graphics of microbiome census data. *PLoS ONE*, **8**, e61217.
 
 Rothberg,J.M. and Leamon,J.H. (2008) The development and impact of 454 sequencing. *Nature biotechnology*, **26**, 1117–1124.
+
+Scarlett,J. *et al.* (1994) Overweight cats: Prevalence and risk factors. *International journal of obesity and related metabolic disorders: journal of the International Association for the Study of Obesity*, **18**, S22–8.
+
+Scott,K.C. *et al.* (2002) Body condition of feral cats and the effect of neutering. *Journal of Applied Animal Welfare Science*, **5**, 203–213.
+
+Sloth,C. (1992) Practical management of obesity in dogs and cats. *Journal of Small Animal Practice*, **33**, 178–182.
