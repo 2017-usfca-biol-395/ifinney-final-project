@@ -38,7 +38,7 @@ Fresh faecal samples were collected from litter boxes once a day over the period
 Computational
 -------------
 
-The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to download the SRA table from NCBI. Using Terminal, I downloaded the SRA toolkit onto my computer and created a for loop script that would download the sequences. I then created an RScript that would parse the sequences downloaded. Next was to install all the necessary packages needed to get the dataset in the best suited format possible. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a clean read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output. Using dplyr and the psmelt function, a melted table was created from that phyloseq object. This process combines all the sample information, OTU, taxonomic classification into a single dataframe to produce graphics easily. Both objects were added to an Rmd file where I eventually created the figures for my analysis. Another important component I added to help create my figures was downloading a platform called Geneious. Essentially this platform is as a software application framework that serves to organize and analyze biological data (Kearse *et al.*, 2012). I used this software to create my phylogenetic tree.
+The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The process to computationally parse and analyze the data gathered was accomplished using a systematic workflow. The first step was to download the SRA table from NCBI. Using Terminal, I downloaded the SRA toolkit onto my computer and created a for loop script that would download the sequences. I then created an RScript that would parse the sequences downloaded. Next was to install all the necessary packages needed to get the dataset in the best suited format possible. The first step was to install all the necessary packages needed to get the dataset in the best suited format possible. In particular, the two most important packages that were installed were DADA2 and phyloseq. DADA2 is a type of open-software package that’s designed to model and correct Illumina-sequenced amplicon errors. It is able to directly extrapolate sequences and accurately resolve any error in as little as 1 nucleotide base (Callahan *et al.*, 2016). The phyloseq pack is also an open-software. This software project was made to preform analysis of microbiome census data present in R. It imports data and allows a user to preform various types of analysis like subsetting, multi-table comparisons, and diversity analysis (McMurdie and Holmes, 2013). This package essentially allowed me to make the different figures comparing the data between men and women. The metadata set was first downloaded from the NCBI database. Then through the creation of a fastq processing script, the metadata was thoroughly trimmed based on a set of parameters determined from the 454 sequencer. From here, DADA2 does its job to check for errors in each of the samples. After doing quality checks on the trimmed and denoised sequences, chimeras were removed from the sequences in order to obtain a cleaner read. Chimeras are formed from two miscloned and joined DNA sequences. The cleaned sequences variants were assigned taxonomy based on known sequences and then a phylogeny was created from a fasta file format of the data. A phyloseq object was constructed from the DADA2 output. Using dplyr and the psmelt function, a melted table was created from that phyloseq object. This process combines all the sample information, OTU, taxonomic classification into a single dataframe to produce graphics easily. Both objects were added to an Rmd file where I eventually created the figures for my analysis. Another important component I added to help create my figures was downloading a platform called Geneious. Essentially this platform is as a software application framework that serves to organize and analyze biological data (Kearse *et al.*, 2012). I used this software to create my phylogenetic tree.
 
 Results
 =======
@@ -71,45 +71,45 @@ Seeing that there was a higher level of diversity and abundance present but a de
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.1929912  max resid 0.4448326 
+    ## ... Procrustes: rmse 0.1921411  max resid 0.5083251 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.1945451  max resid 0.4647534 
+    ## ... Procrustes: rmse 0.1900951  max resid 0.4315134 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.1876916  max resid 0.4610478 
+    ## ... Procrustes: rmse 0.2017923  max resid 0.4837147 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1947967  max resid 0.4655472 
+    ## ... Procrustes: rmse 0.1893849  max resid 0.4263946 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.2024661  max resid 0.4963979 
+    ## ... Procrustes: rmse 0.2010376  max resid 0.4838977 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1970271  max resid 0.4589097 
+    ## ... Procrustes: rmse 0.1983948  max resid 0.4478037 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2016828  max resid 0.4912517 
+    ## ... Procrustes: rmse 0.1970312  max resid 0.4306161 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.1993891  max resid 0.476839 
+    ## ... Procrustes: rmse 0.203319  max resid 0.4955988 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.2003395  max resid 0.4783051 
+    ## ... Procrustes: rmse 0.1916327  max resid 0.4371424 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1941665  max resid 0.4901066 
+    ## ... Procrustes: rmse 0.1978367  max resid 0.52999 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.1952887  max resid 0.4538865 
+    ## ... Procrustes: rmse 0.1994614  max resid 0.4762856 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.1924215  max resid 0.4812608 
+    ## ... Procrustes: rmse 0.1936777  max resid 0.4312856 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1983763  max resid 0.4626483 
+    ## ... Procrustes: rmse 0.1966769  max resid 0.5081518 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.1952112  max resid 0.4536934 
+    ## ... Procrustes: rmse 0.2019562  max resid 0.4813531 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.195128  max resid 0.4764953 
+    ## ... Procrustes: rmse 0.1972452  max resid 0.4292062 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2009138  max resid 0.4997081 
+    ## ... Procrustes: rmse 0.1994586  max resid 0.4558331 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1959924  max resid 0.4738848 
+    ## ... Procrustes: rmse 0.1955466  max resid 0.4906654 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2003506  max resid 0.4958434 
+    ## ... Procrustes: rmse 0.1944129  max resid 0.511624 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1996426  max resid 0.5047396 
+    ## ... Procrustes: rmse 0.1995067  max resid 0.5150842 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.2010218  max resid 0.470127 
+    ## ... Procrustes: rmse 0.1993512  max resid 0.4667588 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -164,27 +164,24 @@ Because there were so many genera, I decided to investigate the mean abundance l
 Discussion
 ==========
 
+Conclusion
+----------
+
+I determined that for this particular dataset, my hypothesis was correct. By investigating the different levels of diversity, I saw that lean and obese cats did share some noticeable differences. The reason why there’s a higher level of abundance and diversity in obese cats is because there is more diversity in their microbial communities. Looking at the different microbial communities, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. Ordination and an analysis of the phylogenetic tree presented that the majority of each type of cat shared many similarities between their microbiota. Looking into the ordination of lean and obese cats, I did notice that although the microbial communities shares many similarities, there were some notable differences that I believed I could distinguish when I looked more in depth at their phylum and genus abundance levels.
+
+Through my investigation into their specific microbiota, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. The six identified phyla (Firmicutes, Actinobacteria, Bacteroidetes, Fusobacteria, Proteobacteria, and Synergistetes) are consistent with the expected phyla seen in other faecal microbiota in cats (Deusch *et al.*, 2015). In phyla abundance, lean cats the highest level of abundance in Firmicutes but that didn't translate over to obese cats. Obese cats showed the highest level of abundance among the Synergistetes and obese cats that had undergone energy restriction showed that Bacteroidetes was most abundant in their microbiota. Previous studies have shown that Firmicutes is the most predominant phylum discovered in the intestinal tract of animals (Ritchie *et al.*, 2008) but for this dataset that was only present among the lean cats. Previous studies have also noted that there are proportional differences in the abundance of other bacterial phyla in the guts of other animals. Bacteroidetes and Firmicutes have been shown to effect the adiposity of mammals. Looking at the microbiome of these mammals, the relative abundance of Bacteroidetes increases as obese individuals lose weight (Turnbaugh *et al.*, 2006). I could see that in just those 6 weeks of energy restriction, the level of abundance in Bacteroidetes did increase. Some of the data presented in this dataset stands in contrast to what other studies have found in the relative abundance of these phyla in obese and lean cats. Usually, obese cats have a higher presence of Firmicutes than Bacteroidetes when comparing them to lean cats but that isn’t the case for my data (Ley *et al.*, 2005). These differences in their findings could point to the fact that there may be more relevant changes at lower taxonomic levels that affect the differences in weight.
+
+Looking at the different microbial communities, some of the trends seen from phyla abundance translated over to genera abundance. For example, obese cats expressed extremely high levels of abundance in the phylum Actinobacteria and that trends followed through to genera presence as the genera *Olsenella* and *Eggerthella* was also one of the most highly expressed. This trend is also present in lean cats because the genus *Clostridrium*, from phylum Firmicutes, expressed the highest levels of abundance in lean cats. Through external research into those genera that were more expressed I did see that these species had some characteristics that affect weight gain and metabolism. In particular, *Clostridium* influences metabolism and body composition. It has been shown to facilitate carbohydrate oxidation and metabolism in that it affects the fat mass in lean cats (Kelder *et al.*, 2014). I found that for this dataset, the faecal microbiota of lean and obese cats do have some notable differences that affect weight loss and body composition. In the 6 weeks of energy restriction, obese cats did seem to have some impact on the relative abundance levels. This further shows that diet does affect how the feacal microbiota is composed.
+
 Caveats
 -------
 
--I didn’t take into account other variables like sex and age -The data sample is small, only 24 cats were observed +IN those 24 cats there was an even number of obese cats between gender but in the neutered lean cats there -Study only preformed on short-haired cats -The study was only over the course of 6 months, which can be considered a relatively short time short period of time. To get a better idea at the changes that occur over these phenotypes, maybe a study could be done that took over the course of a year or so.
+Explaining the different variables that went into constructing the different dataset is important in understanding why my data can only be taken at face value and why some of my results are in contrast to the data found in other studies. The first thing I should address is that I didn’t take into account other variables like sex and age. These variables could prove to change the way in which faecal microbiota changes in lean and obese cats. Another caveat is that the data sample that I used was small. Only 24 cats were observed and in those 24 cats there was an even number of obese cats between gender but in the neutered lean cats there were only two females and six males that were observed. If sex plays a variable in diversity and abundance then my data could be bias as a result. The scientists from this study only performed their experiment on short-haired cats which could causes bias because there may a different story on long haired cats because of the possibility that there are genetic factors that are present between these types of cats that translate over to weight gain in their respective populations. Another caveat is that this study was only over the course of 6 months, which can be considered a relatively short time short period of time. To get a better idea at the changes that occur over these phenotypes, maybe a study could be done that took over the course of a year so that a more in-depth analysis could be done on how the microbiota changes over time. The biggest I had was in the sequences of my data. When I had to perform the pipeline, after the quality checks it was clear that were some serious errors in the sequences that forced me to make drastic cuts just so that I could even perform a sufficient enough analysis. I imagine that these errors could have translated to the issues that I saw in my own dataset in relation to what other studies have reported. For example, Firmicutes are known to be the predominant phylum in the intestinal tract of animals, especially those that are obese, that wasn’t the case for my data when I looked at the phyla abundance. In conclusion, my data is only as good as I could hope it to be. To get a better sense of how the microbiome affects obesity, further analysis should be done and higher quality sequences should be collected.
 
-Biggest Issue: -In all sincerity, when I had to perform the pipeline, after the quality checks it was clear that were some serious errors in the sequences. I’m sure this seriously skewed the results for the data I produced. Mention Zimmerman’s comment
+Significance and Further Directions
+-----------------------------------
 
--Example why I could see that my data showed issues: Firmicutes are known to be the predominant phylum in the intestinal tract of animals, that wasn’t the case for my data when I looked at phyla but it was very present when I saw that the highest genus species.
-
-Conclusion and Further Direction
---------------------------------
-
--I found that for this particular dataset, my hypothesis was correct. -The reason why there’s a higher level of abundance and diversity in obese cats is because there is more diversity in their microbial communities.
-
--Looking at the different microbial communities, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. Some of the trends seen from phyla abundance translated over to genera abundance. For example, obese cats expressed extremely high levels of abundance in the phylum Actinobacteria and that trends followed through to genera presence as the genera *Olsenella* and *Eggerthella* was also one of the most highly expressed.
-
--Through external research into those genera that were more expressed I did see that these species had some characteristics that affect weight gain and metabolism. In particular, *Clostridium* influences metabolism and body composition.
-
--The reason why this research this is so important is because there aren’t sufficient enough solutions to combating obesity in cats. Mainstream media idealizes the image of fat cats, for example with the grumpy cat and fat cat memes, so people often don’t even realize there’s an issue with animal obesity.
-
-With more research into diversity and the microbiota that heavily influence obesity rates, nutritional dietary plans and medical application could be implemented to help those poor fat cats.
+Prevention and management of feline obesity requires identifies the most prevalent underlying causes of the disorder in individual cats so examining the microbiome could lead to creation of new applications that could solve this issue more effectively. The reason why this research this is so important is because there aren’t sufficient enough solutions to combating obesity in cats. Mainstream media idealizes the image of fat cats, for example with the grumpy cat and fat cat memes, so people often don’t even realize there’s an issue with animal obesity. With more research into diversity and the microbiota that heavily influence obesity rates, nutritional dietary plans and medical application could be implemented to help those poor fat cats and other animals who suffer from obesity.
 
 Sources Cited
 =============
@@ -192,6 +189,8 @@ Sources Cited
 Callahan,B.J. *et al.* (2016) DADA2: High-resolution sample inference from illumina amplicon data. *Nature Methods*, **13**, 581–583.
 
 Colliard,L. *et al.* (2009) Prevalence and risk factors of obesity in an urban population of healthy cats. *Journal of Feline Medicine & Surgery*, **11**, 135–140.
+
+Deusch,O. *et al.* (2015) A longitudinal study of the feline faecal microbiome identifies changes into early adulthood irrespective of sexual development. *PloS one*, **10**, e0144881.
 
 Fierer,N. and Jackson,R.B. (2006) The diversity and biogeography of soil bacterial communities. *Proceedings of the National Academy of Sciences of the United States of America*, **103**, 626–631.
 
@@ -213,15 +212,21 @@ Hoenig,M. and Ferguson,D.C. (2002) Effects of neutering on hormonal concentratio
 
 Kearse,M. *et al.* (2012) Geneious basic: An integrated and extendable desktop software platform for the organization and analysis of sequence data. *Bioinformatics*, **28**, 1647–1649.
 
+Kelder,T. *et al.* (2014) Correlation network analysis reveals relationships between diet-induced changes in human gut microbiota and metabolic health. *Nutrition & diabetes*, **4**, e122.
+
 Kienzle,E. *et al.* (2001) The human-animal relationship and overfeeding in cats. *Compendium on Continuing Education for the Practicing Veterinarian*, **23**, 73–73.
 
 Laflamme,D. (1997) Development and validation of a body condition score system for cats: A clinical tool. *Feline practice (Santa Barbara, Calif.: 1990)(USA)*.
+
+Ley,R.E. *et al.* (2005) Obesity alters gut microbial ecology. *Proceedings of the National Academy of Sciences of the United States of America*, **102**, 11070–11075.
 
 Linder,D. and Mueller,M. (2014) Pet obesity management. *Veterinary Clinics: Small Animal Practice*, **44**, 789–806.
 
 Lukaski,H.C. and Johnson,P.E. (1985) A simple, inexpensive method of determining total body water using a tracer dose of d2o and infrared absorption of biological fluids. *The American journal of clinical nutrition*, **41**, 363–370.
 
 McMurdie,P.J. and Holmes,S. (2013) Phyloseq: An r package for reproducible interactive analysis and graphics of microbiome census data. *PLoS ONE*, **8**, e61217.
+
+Ritchie,L.E. *et al.* (2008) Assessment of microbial diversity along the feline intestinal tract using 16S rRNA gene analysis. *FEMS microbiology ecology*, **66**, 590–598.
 
 Rothberg,J.M. and Leamon,J.H. (2008) The development and impact of 454 sequencing. *Nature biotechnology*, **26**, 1117–1124.
 
@@ -230,3 +235,5 @@ Scarlett,J. *et al.* (1994) Overweight cats: Prevalence and risk factors. *Inter
 Scott,K.C. *et al.* (2002) Body condition of feral cats and the effect of neutering. *Journal of Applied Animal Welfare Science*, **5**, 203–213.
 
 Sloth,C. (1992) Practical management of obesity in dogs and cats. *Journal of Small Animal Practice*, **33**, 178–182.
+
+Turnbaugh,P.J. *et al.* (2006) An obesity-associated gut microbiome with increased capacity for energy harvest. *nature*, **444**, 1027–131.
