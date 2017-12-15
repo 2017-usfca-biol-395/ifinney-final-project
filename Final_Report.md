@@ -71,45 +71,45 @@ Seeing that there was a higher level of diversity and abundance present but a de
     ## Wisconsin double standardization
     ## Run 0 stress 0 
     ## Run 1 stress 0 
-    ## ... Procrustes: rmse 0.1921411  max resid 0.5083251 
+    ## ... Procrustes: rmse 0.197954  max resid 0.4547634 
     ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.1900951  max resid 0.4315134 
+    ## ... Procrustes: rmse 0.1990163  max resid 0.4481176 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2017923  max resid 0.4837147 
+    ## ... Procrustes: rmse 0.1949831  max resid 0.4667419 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.1893849  max resid 0.4263946 
+    ## ... Procrustes: rmse 0.183065  max resid 0.419023 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.2010376  max resid 0.4838977 
+    ## ... Procrustes: rmse 0.2020374  max resid 0.4845384 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1983948  max resid 0.4478037 
+    ## ... Procrustes: rmse 0.1983665  max resid 0.4670867 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.1970312  max resid 0.4306161 
+    ## ... Procrustes: rmse 0.1909307  max resid 0.4223444 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.203319  max resid 0.4955988 
+    ## ... Procrustes: rmse 0.2016393  max resid 0.4894846 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1916327  max resid 0.4371424 
+    ## ... Procrustes: rmse 0.2008516  max resid 0.4734059 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1978367  max resid 0.52999 
+    ## ... Procrustes: rmse 0.1969098  max resid 0.4628865 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.1994614  max resid 0.4762856 
+    ## ... Procrustes: rmse 0.199342  max resid 0.4982461 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.1936777  max resid 0.4312856 
+    ## ... Procrustes: rmse 0.1956032  max resid 0.4578754 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1966769  max resid 0.5081518 
+    ## ... Procrustes: rmse 0.2007307  max resid 0.458176 
     ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2019562  max resid 0.4813531 
+    ## ... Procrustes: rmse 0.2004969  max resid 0.4665461 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.1972452  max resid 0.4292062 
+    ## ... Procrustes: rmse 0.1955859  max resid 0.4561388 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.1994586  max resid 0.4558331 
+    ## ... Procrustes: rmse 0.1987537  max resid 0.4737814 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.1955466  max resid 0.4906654 
+    ## ... Procrustes: rmse 0.1987435  max resid 0.489998 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.1944129  max resid 0.511624 
+    ## ... Procrustes: rmse 0.2011179  max resid 0.460143 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.1995067  max resid 0.5150842 
+    ## ... Procrustes: rmse 0.2027871  max resid 0.494845 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1993512  max resid 0.4667588 
+    ## ... Procrustes: rmse 0.1871481  max resid 0.4640643 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -169,7 +169,7 @@ Conclusion
 
 I determined that for this particular dataset, my hypothesis was correct. By investigating the different levels of diversity, I saw that lean and obese cats did share some noticeable differences. The reason why there’s a higher level of abundance and diversity in obese cats is because there is more diversity in their microbial communities. Looking at the different microbial communities, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. Ordination and an analysis of the phylogenetic tree presented that the majority of each type of cat shared many similarities between their microbiota. Looking into the ordination of lean and obese cats, I did notice that although the microbial communities shares many similarities, there were some notable differences that I believed I could distinguish when I looked more in depth at their phylum and genus abundance levels.
 
-Through my investigation into their specific microbiota, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. The six identified phyla (Firmicutes, Actinobacteria, Bacteroidetes, Fusobacteria, Proteobacteria, and Synergistetes) are consistent with the expected phyla seen in other faecal microbiota in cats (Deusch *et al.*, 2015). In phyla abundance, lean cats the highest level of abundance in Firmicutes but that didn't translate over to obese cats. Obese cats showed the highest level of abundance among the Synergistetes and obese cats that had undergone energy restriction showed that Bacteroidetes was most abundant in their microbiota. Previous studies have shown that Firmicutes is the most predominant phylum discovered in the intestinal tract of animals (Ritchie *et al.*, 2008) but for this dataset that was only present among the lean cats. Previous studies have also noted that there are proportional differences in the abundance of other bacterial phyla in the guts of other animals. Bacteroidetes and Firmicutes have been shown to effect the adiposity of mammals. Looking at the microbiome of these mammals, the relative abundance of Bacteroidetes increases as obese individuals lose weight (Turnbaugh *et al.*, 2006). I could see that in just those 6 weeks of energy restriction, the level of abundance in Bacteroidetes did increase. Some of the data presented in this dataset stands in contrast to what other studies have found in the relative abundance of these phyla in obese and lean cats. Usually, obese cats have a higher presence of Firmicutes than Bacteroidetes when comparing them to lean cats but that isn’t the case for my data (Ley *et al.*, 2005). These differences in their findings could point to the fact that there may be more relevant changes at lower taxonomic levels that affect the differences in weight.
+Through my investigation into their specific microbiota, a higher presence in certain phyla and genus explained the differences as I saw in diversity levels. The six identified phyla (Firmicutes, Actinobacteria, Bacteroidetes, Fusobacteria, Proteobacteria, and Synergistetes) are consistent with the expected phyla seen in other faecal microbiota in cats (Deusch *et al.*, 2015). In phyla abundance, lean cats the highest level of abundance in Firmicutes but that didn't translate over to obese cats. Obese cats showed the highest level of abundance among the Synergistetes and obese cats that had undergone energy restriction showed that Bacteroidetes was most abundant in their microbiota. Previous studies have shown that Firmicutes is the most predominant phylum discovered in the intestinal tract of animals (Ritchie *et al.*, 2008) but for this dataset that was only present among the lean cats. Previous studies have also noted that there are proportional differences in the abundance of other bacterial phyla in the guts of other animals. Bacteroidetes and Firmicutes have been shown to affect the adiposity of mammals. Looking at the microbiome of these mammals, the relative abundance of Bacteroidetes increases as obese individuals lose weight (Turnbaugh *et al.*, 2006). I could see that in just those 6 weeks of energy restriction, the level of abundance in Bacteroidetes did increase. Some of the data presented in this dataset stands in contrast to what other studies have found in the relative abundance of these phyla in obese and lean cats. Usually, obese cats have a higher presence of Firmicutes than Bacteroidetes when comparing them to lean cats but that isn’t the case for my data (Ley *et al.*, 2005). These differences in their findings could point to the fact that there may be more relevant changes at lower taxonomic levels that affect the differences in weight.
 
 Looking at the different microbial communities, some of the trends seen from phyla abundance translated over to genera abundance. For example, obese cats expressed extremely high levels of abundance in the phylum Actinobacteria and that trends followed through to genera presence as the genera *Olsenella* and *Eggerthella* was also one of the most highly expressed. This trend is also present in lean cats because the genus *Clostridrium*, from phylum Firmicutes, expressed the highest levels of abundance in lean cats. Through external research into those genera that were more expressed I did see that these species had some characteristics that affect weight gain and metabolism. In particular, *Clostridium* influences metabolism and body composition. It has been shown to facilitate carbohydrate oxidation and metabolism in that it affects the fat mass in lean cats (Kelder *et al.*, 2014). I found that for this dataset, the faecal microbiota of lean and obese cats do have some notable differences that affect weight loss and body composition. In the 6 weeks of energy restriction, obese cats did seem to have some impact on the relative abundance levels. This further shows that diet does affect how the feacal microbiota is composed.
 
